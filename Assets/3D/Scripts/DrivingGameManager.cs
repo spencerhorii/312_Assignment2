@@ -34,7 +34,7 @@ public class DrivingGameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             currRot -= 90f;
             if (currRot < 0)
