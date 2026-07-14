@@ -1,0 +1,287 @@
+// using System.Collections.Generic;
+// using UnityEngine;
+
+// /// <summary>
+// /// One entry in a Type1 or Type2 response prompt. optionText is what's displayed;
+// /// nextNode is where the conversation continues if this option is chosen.
+// ///
+// /// The award/remove fields below are primarily meant for Type1 (action) responses - e.g. a
+// /// "Yes, here's your delivery" option that removes a quest item and awards currency/an item
+// /// in return. They'll also appear on Type2 options in the Inspector since both share this
+// /// class, but are simply ignored if left unchecked there.
+// ///
+// /// Removal happens via InventoryManager/QuestInventoryManager's two-phase TryRemoveItem() ->
+// /// (animation plays) -> ConfirmRemoval() flow, so the item isn't actually destroyed until
+// /// InventoryUI's shrink animation finishes - see those managers and InventoryUI for details.
+// /// </summary>
+// [System.Serializable]
+// public class DialogueResponseOption
+// {
+//     [Tooltip("Text shown for this option in the response bubble.")]
+//     public string optionText;
+
+//     [Tooltip("Where the conversation continues if this option is picked (and all requested " +
+//              "removals below succeeded). Leave empty to end the dialogue.")]
+//     public DialogueNode nextNode;
+
+//     [Tooltip("Free-form identifier read by future systems (Shop, etc) to know which action was chosen.")]
+//     public string actionID;
+
+//     [Header("Regular Item Actions")]
+//     public bool awardsItem;
+//     public ItemData itemToAward;
+//     public bool removesItem;
+//     public ItemData itemToRemove;
+
+//     [Header("Quest Item Actions")]
+//     public bool awardsQuestItem;
+//     public QuestItemData questItemToAward;
+//     public bool removesQuestItem;
+//     public QuestItemData questItemToRemove;
+
+//     [Header("Missing Item Fallback")]
+//     [TextArea(2, 3)]
+//     [Tooltip("If any 'removes' action above fails because the player doesn't actually have that " +
+//              "item, this message is shown instead of proceeding to nextNode, and no awards/removals " +
+//              "happen at all. Leave empty to just proceed to nextNode regardless (not recommended if " +
+//              "any removal is checked).")]
+//     public string itemMissingLineText;
+// }
+
+// public enum DialogueNodeType
+// {
+//     Line,
+//     Type1Response,
+//     Type2Response,
+//     End
+// }
+
+// /// <summary>
+// /// Who is "speaking" a node's text - determines where the main dialogue bubble appears.
+// /// Only affects the main dialogue bubble; the response options bubble always stays
+// /// centre-screen regardless of speaker.
+// /// </summary>
+// public enum DialogueSpeaker
+// {
+//     NPC,
+//     Player
+// }
+
+// /// <summary>
+// /// One node in a dialogue tree, saved as its own asset (Create > Dialogue > Dialogue Node).
+// /// Build a conversation by creating a chain of these and linking them via nextNode /
+// /// response option nextNode fields - the whole tree is just asset references.
+// ///
+// /// Every node type types out its own lineText before branching based on its nodeType -
+// /// see DialogueManager for the exact flow. A single node can award a regular item, a quest
+// /// item, or both - see DialogueManager for how the two interact if both are set on one node.
+// /// </summary>
+// [CreateAssetMenu(fileName = "NewDialogueNode", menuName = "Dialogue/Dialogue Node")]
+// public class DialogueNode : ScriptableObject
+// {
+//     [Tooltip("What kind of node this is. Line = a spoken line of dialogue. Type1Response/Type2Response = " +
+//              "a response prompt. End = explicitly terminates the conversation.")]
+//     public DialogueNodeType nodeType = DialogueNodeType.Line;
+
+//     [Header("Text (all node types)")]
+//     [TextArea(2, 5)]
+//     [Tooltip("The text typed out character-by-character for this node.")]
+//     public string lineText;
+
+//     [Tooltip("Who is speaking this line - determines where the dialogue bubble appears. " +
+//              "NPC = positioned above the NPC's head. Player = positioned at the centre of the screen.")]
+//     public DialogueSpeaker speaker = DialogueSpeaker.NPC;
+
+//     [Header("Sequence Progression")]
+//     [Tooltip("If checked, reaching this node advances the speaking NPC's dialogue sequence by 1 " +
+//              "once its text finishes typing. Use this on whichever node marks the natural end of a " +
+//              "sequence, so the NPC starts from a different Sequence Starter next time you talk to them.")]
+//     public bool advancesSequence;
+
+//     [Header("Line (nodeType = Line)")]
+//     [Tooltip("What happens after this line finishes: another Line, a response prompt, an End node, " +
+//              "or leave empty to end the conversation here.")]
+//     public DialogueNode nextNode;
+
+//     [Header("Item Award (optional, any node type)")]
+//     [Tooltip("If checked, the item below is given to the player once this node's text finishes typing " +
+//              "- but only the first time. Repeat visits show alreadyAwardedLineText instead and do not re-award.")]
+//     public bool awardsItem;
+//     [Tooltip("The item to award.")]
+//     public ItemData itemToAward;
+//     [TextArea(2, 3)]
+//     [Tooltip("If the player's inventory is full (and the item hasn't been awarded yet), this text is shown " +
+//              "instead of lineText, and the item is NOT awarded. Leave empty to just show lineText as normal.")]
+//     public string inventoryFullLineText;
+//     [TextArea(2, 3)]
+//     [Tooltip("Shown instead of lineText if this item has already been awarded once before (in this play " +
+//              "session). The item is never given twice. Leave empty to just show lineText again without re-awarding.")]
+//     public string alreadyAwardedLineText;
+
+//     [Header("Quest Item Award (optional, any node type)")]
+//     [Tooltip("If checked, the quest item below is given to the player once this node's text finishes " +
+//              "typing - but only the first time. Quest inventory is unbounded, so there's no 'full' case " +
+//              "to handle here, unlike regular item awards.")]
+//     public bool awardsQuestItem;
+//     [Tooltip("The quest item to award.")]
+//     public QuestItemData questItemToAward;
+//     [TextArea(2, 3)]
+//     [Tooltip("Shown instead of lineText if this quest item has already been awarded once before. " +
+//              "If both awardsItem and awardsQuestItem are set and both are already-awarded, this text " +
+//              "takes priority over alreadyAwardedLineText. Leave empty to just show lineText again.")]
+//     public string alreadyAwardedQuestItemLineText;
+
+//     [Header("Type1 Responses (nodeType = Type1Response) - action options, e.g. Shop/Deliver/Leave")]
+//     public List<DialogueResponseOption> type1Options = new List<DialogueResponseOption>();
+
+//     [Header("Type2 Responses (nodeType = Type2Response) - branching dialogue options, e.g. Yes/No")]
+//     public List<DialogueResponseOption> type2Options = new List<DialogueResponseOption>();
+// }
+
+
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// One entry in a Type1 or Type2 response prompt. optionText is what's displayed;
+/// nextNode is where the conversation continues if this option is chosen.
+///
+/// The award/remove fields below are primarily meant for Type1 (action) responses - e.g. a
+/// "Yes, here's your delivery" option that removes a quest item and awards currency/an item
+/// in return. They'll also appear on Type2 options in the Inspector since both share this
+/// class, but are simply ignored if left unchecked there.
+///
+/// Removal happens via InventoryManager/QuestInventoryManager's two-phase TryRemoveItem() ->
+/// (animation plays) -> ConfirmRemoval() flow, so the item isn't actually destroyed until
+/// InventoryUI's shrink animation finishes - see those managers and InventoryUI for details.
+/// </summary>
+[System.Serializable]
+public class DialogueResponseOption
+{
+    [Tooltip("Text shown for this option in the response bubble.")]
+    public string optionText;
+
+    [Tooltip("Where the conversation continues if this option is picked (and all requested " +
+             "removals below succeeded). Leave empty to end the dialogue.")]
+    public DialogueNode nextNode;
+
+    [Tooltip("Free-form identifier read by future systems (Shop, etc) to know which action was chosen.")]
+    public string actionID;
+
+    [Header("Regular Item Actions")]
+    public bool awardsItem;
+    public ItemData itemToAward;
+    public bool removesItem;
+    public ItemData itemToRemove;
+
+    [Header("Quest Item Actions")]
+    public bool awardsQuestItem;
+    public QuestItemData questItemToAward;
+    public bool removesQuestItem;
+    public QuestItemData questItemToRemove;
+
+    [Header("Missing Item Fallback")]
+    [TextArea(2, 3)]
+    [Tooltip("If any 'removes' action above fails because the player doesn't actually have that " +
+             "item, this message is shown instead of proceeding to nextNode, and no awards/removals " +
+             "happen at all. Leave empty to just proceed to nextNode regardless (not recommended if " +
+             "any removal is checked).")]
+    public string itemMissingLineText;
+}
+
+public enum DialogueNodeType
+{
+    Line,
+    Type1Response,
+    Type2Response,
+    End
+}
+
+/// <summary>
+/// Who is "speaking" a node's text - determines where the main dialogue bubble appears.
+/// Only affects the main dialogue bubble; the response options bubble always stays
+/// centre-screen regardless of speaker.
+/// </summary>
+public enum DialogueSpeaker
+{
+    NPC,
+    Player
+}
+
+/// <summary>
+/// One node in a dialogue tree, saved as its own asset (Create > Dialogue > Dialogue Node).
+/// Build a conversation by creating a chain of these and linking them via nextNode /
+/// response option nextNode fields - the whole tree is just asset references.
+///
+/// Every node type types out its own lineText before branching based on its nodeType -
+/// see DialogueManager for the exact flow. A single node can award a regular item, a quest
+/// item, or both - see DialogueManager for how the two interact if both are set on one node.
+/// </summary>
+[CreateAssetMenu(fileName = "NewDialogueNode", menuName = "Dialogue/Dialogue Node")]
+public class DialogueNode : ScriptableObject
+{
+    [Tooltip("What kind of node this is. Line = a spoken line of dialogue. Type1Response/Type2Response = " +
+             "a response prompt. End = explicitly terminates the conversation.")]
+    public DialogueNodeType nodeType = DialogueNodeType.Line;
+
+    [Header("Text (all node types)")]
+    [TextArea(2, 5)]
+    [Tooltip("The text typed out character-by-character for this node.")]
+    public string lineText;
+
+    [Tooltip("Who is speaking this line - determines where the dialogue bubble appears. " +
+             "NPC = positioned above the NPC's head. Player = positioned at the centre of the screen.")]
+    public DialogueSpeaker speaker = DialogueSpeaker.NPC;
+
+    [Header("Sequence Progression")]
+    [Tooltip("If checked, reaching this node advances the speaking NPC's dialogue sequence by 1 " +
+             "once its text finishes typing. Use this on whichever node marks the natural end of a " +
+             "sequence, so the NPC starts from a different Sequence Starter next time you talk to them.")]
+    public bool advancesSequence;
+
+    [Header("Line (nodeType = Line)")]
+    [Tooltip("What happens after this line finishes: another Line, a response prompt, an End node, " +
+             "or leave empty to end the conversation here.")]
+    public DialogueNode nextNode;
+
+    [Header("Item Award (optional, any node type)")]
+    [Tooltip("If checked, the item below is given to the player once this node's text finishes typing " +
+             "- but only the first time. Repeat visits show alreadyAwardedLineText instead and do not re-award.")]
+    public bool awardsItem;
+    [Tooltip("The item to award.")]
+    public ItemData itemToAward;
+    [TextArea(2, 3)]
+    [Tooltip("If the player's inventory is full (and the item hasn't been awarded yet), this text is shown " +
+             "instead of lineText, and the item is NOT awarded. Leave empty to just show lineText as normal.")]
+    public string inventoryFullLineText;
+    [TextArea(2, 3)]
+    [Tooltip("Shown instead of lineText if this item has already been awarded once before (in this play " +
+             "session). The item is never given twice. Leave empty to just show lineText again without re-awarding.")]
+    public string alreadyAwardedLineText;
+
+    [Header("Quest Item Award (optional, any node type)")]
+    [Tooltip("If checked, the quest item below is given to the player once this node's text finishes " +
+             "typing - but only the first time. Quest inventory is unbounded, so there's no 'full' case " +
+             "to handle here, unlike regular item awards.")]
+    public bool awardsQuestItem;
+    [Tooltip("The quest item to award.")]
+    public QuestItemData questItemToAward;
+    [TextArea(2, 3)]
+    [Tooltip("Shown instead of lineText if this quest item has already been awarded once before. " +
+             "If both awardsItem and awardsQuestItem are set and both are already-awarded, this text " +
+             "takes priority over alreadyAwardedLineText. Leave empty to just show lineText again.")]
+    public string alreadyAwardedQuestItemLineText;
+
+    [Header("Opens Shop (optional, any node type)")]
+    [Tooltip("If checked, once this node's text finishes typing (or immediately, if lineText is " +
+             "empty), the conversation ends and the shop UI opens automatically using shopToOpen.")]
+    public bool opensShop;
+    [Tooltip("Which shop's stock to open. Required if opensShop is checked.")]
+    public ShopData shopToOpen;
+
+    [Header("Type1 Responses (nodeType = Type1Response) - action options, e.g. Shop/Deliver/Leave")]
+    public List<DialogueResponseOption> type1Options = new List<DialogueResponseOption>();
+
+    [Header("Type2 Responses (nodeType = Type2Response) - branching dialogue options, e.g. Yes/No")]
+    public List<DialogueResponseOption> type2Options = new List<DialogueResponseOption>();
+}
