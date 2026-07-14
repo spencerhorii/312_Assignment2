@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4868630904151233522}
   - component: {fileID: 9019507243577993022}
   - component: {fileID: 8936787543869017615}
+  - component: {fileID: 5789682604038164624}
   m_Layer: 0
   m_Name: Tooltip
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -4135019666804739058, guid: e7f28090857407a4eba6ca591cce6d5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,8 +109,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7f28090857407a4eba6ca591cce6d5e, type: 2}
+  m_sharedMaterial: {fileID: -4135019666804739058, guid: e7f28090857407a4eba6ca591cce6d5e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -181,6 +182,47 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 9019507243577993022}
   m_maskType: 0
+--- !u!114 &5789682604038164624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611079278342656095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a816898b2ea967743a4ace444da29274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldTooltip
+  tooltipText: {fileID: 8936787543869017615}
+  scaleDuration: 0.15
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxScale: {x: 1, y: 1, z: 1}
+  oscillationAmplitude: 0.05
+  oscillationSpeed: 1
 --- !u!1 &2149063436149668971
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,33 +367,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemData: {fileID: 11400000, guid: e095afe4571b63f4aab81f863f25093a, type: 2}
   spriteRenderer: {fileID: 2283841266123430890}
-  tooltipText: {fileID: 8936787543869017615}
   interactionRange: {fileID: 705299505270723029}
-  tooltipScaleDuration: 0.15
-  tooltipScaleCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  tooltipMaxScale: {x: 1, y: 1, z: 1}
-  oscillationAmplitude: 0.05
-  oscillationSpeed: 1
+  worldTooltip: {fileID: 5789682604038164624}

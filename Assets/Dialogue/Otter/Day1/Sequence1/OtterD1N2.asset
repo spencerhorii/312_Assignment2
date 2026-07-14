@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353691535d948a64f85644ae1a74eb10, type: 3}
+  m_Name: OtterD1N2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  nodeType: 2
+  lineText: Do you want a regular item, or a quest item?
+  speaker: 0
+  nextNode: {fileID: 0}
+  awardsItem: 0
+  itemToAward: {fileID: 0}
+  inventoryFullLineText: 
+  alreadyAwardedLineText: 
+  awardsQuestItem: 0
+  questItemToAward: {fileID: 0}
+  alreadyAwardedQuestItemLineText: 
+  type1Options: []
+  type2Options:
+  - optionText: Regular
+    nextNode: {fileID: 11400000, guid: d05471d946a261e48b7572acca0576ce, type: 2}
+    actionID: OtterD1N2T2O1
+  - optionText: Quest
+    nextNode: {fileID: 11400000, guid: 32ecaa154092a964dbd3e16760ef634f, type: 2}
+    actionID: OtterD1N2T2O2
