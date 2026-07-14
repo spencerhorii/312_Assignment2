@@ -97,6 +97,28 @@ public class keyUI : MonoBehaviour
                 clicked = false;
             }
         }
+        else if(inputKey == "Q" || inputKey == "q")
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                clicked = true;
+            }
+            else
+            {
+                clicked = false;
+            }
+        }
+        else if(inputKey == "R" || inputKey == "r")
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                clicked = true;
+            }
+            else
+            {
+                clicked = false;
+            }
+        }
 
     }
 };
