@@ -815,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &225503523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,8 +828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824c00d308ef45c6873337f858ef765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlatAsset
-  frame1: {fileID: -7411974349392773033, guid: f93d1674a866b41a3b0f4b72bdb7b1a4, type: 3}
-  frame2: {fileID: -6871032511782127585, guid: 88e916d4450c64fef82b3597f0565d63, type: 3}
+  frame1: {fileID: 21300000, guid: f93d1674a866b41a3b0f4b72bdb7b1a4, type: 3}
+  frame2: {fileID: 21300000, guid: 88e916d4450c64fef82b3597f0565d63, type: 3}
 --- !u!212 &225503524
 SpriteRenderer:
   serializedVersion: 2
@@ -879,12 +879,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7411974349392773033, guid: f93d1674a866b41a3b0f4b72bdb7b1a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f93d1674a866b41a3b0f4b72bdb7b1a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.17, y: 3.75}
+  m_Size: {x: 1.59, y: 1.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -898,10 +898,11 @@ Transform:
   m_GameObject: {fileID: 225503522}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -5.87, y: 1.48, z: -3.83}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: -5.08, y: 1.16, z: -4.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 859504735}
   m_Father: {fileID: 1746312831}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &273424090
@@ -2570,12 +2571,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859504734}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.44, y: 0.25, z: -3.76}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.47, y: -0.92999995, z: 0.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1746312831}
+  m_Father: {fileID: 225503525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &859504736
 MonoBehaviour:
@@ -4363,7 +4364,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 703136992}
-  - {fileID: 859504735}
   - {fileID: 225503525}
   - {fileID: 1678337231}
   - {fileID: 574685672}
@@ -4433,6 +4433,7 @@ MonoBehaviour:
   - {fileID: 38661940}
   - {fileID: 1311644826}
   - {fileID: 1632548176}
+  - {fileID: 225503522}
 --- !u!1 &1791554853
 GameObject:
   m_ObjectHideFlags: 0
