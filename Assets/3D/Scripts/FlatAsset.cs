@@ -46,18 +46,18 @@ public class FlatAsset : MonoBehaviour
     {
         // t.rotation = Quaternion.RotateTowards(t.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         t.Rotate(0, 90f, 0);
-        if(t.rotation.y >= 360)
+        if(t.rotation.y >= 405)
         {
-            t.rotation = Quaternion.Euler(0f, 0f, 0f);
+            t.rotation = Quaternion.Euler(0f, 45f, 0f);
         }
     }
     public void rotateLeft()
     {
         // t.rotation = Quaternion.RotateTowards(t.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         t.Rotate(0, -90f, 0);
-        if(t.rotation.y <= -90)
+        if(t.rotation.y <= -45)
         {
-            t.rotation = Quaternion.Euler(0f, 270f, 0f);
+            t.rotation = Quaternion.Euler(0f, 315f, 0f);
         }
     }
 }

@@ -14,7 +14,7 @@ public class DrivingGameManager : MonoBehaviour
     void Start()
     {
         t = GetComponent<Transform>();
-        currRot = 0;
+        currRot = 45;
         targetRotation = t.rotation;
     }
 
@@ -23,9 +23,9 @@ public class DrivingGameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             currRot += 90f;
-            if (currRot >= 360)
+            if (currRot >= 405)
             {
-                currRot = 0;
+                currRot = 45;
             }
             targetRotation = Quaternion.Euler(0f, currRot, 0f);
             foreach (GameObject flat in flatAssets)
@@ -37,9 +37,9 @@ public class DrivingGameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currRot -= 90f;
-            if (currRot < 0)
+            if (currRot < 45)
             {
-                currRot = 270;
+                currRot = 315;
             }
             targetRotation = Quaternion.Euler(0f, currRot, 0f);
             foreach (GameObject flat in flatAssets)
