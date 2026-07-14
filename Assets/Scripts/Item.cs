@@ -49,6 +49,7 @@
 //     {
 //         if (!playerInRange) return;
 //         if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive) return;
+//         if (ShopManager.Instance != null && ShopManager.Instance.IsShopOpen) return;
 
 //         RefreshTooltipText();
 
@@ -172,6 +173,7 @@ public class Item : MonoBehaviour
         bool added = InventoryManager.Instance.TryAddItem(itemData);
         if (added)
         {
+            if (AudioManager.Instance != null) AudioManager.Instance.PlayUISound(itemData.pickupSound);
             Destroy(gameObject);
         }
         // If not added (inventory full), the tooltip already communicates why - nothing else to do.

@@ -47,6 +47,7 @@
 //     {
 //         if (!playerInRange) return;
 //         if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive) return;
+//         if (ShopManager.Instance != null && ShopManager.Instance.IsShopOpen) return;
 
 //         if (Input.GetKeyDown(KeyCode.E))
 //         {
@@ -78,6 +79,7 @@
 //         if (worldTooltip != null) worldTooltip.Hide();
 //     }
 // }
+
 
 using UnityEngine;
 
@@ -141,6 +143,7 @@ public class QuestItem : MonoBehaviour
         if (QuestInventoryManager.Instance == null || questItemData == null) return;
 
         QuestInventoryManager.Instance.AddItem(questItemData);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayUISound(questItemData.pickupSound);
         Destroy(gameObject);
     }
 

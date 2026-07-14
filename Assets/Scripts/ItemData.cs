@@ -4,9 +4,9 @@
 // /// Defines a reusable "item type" as a ScriptableObject asset (e.g. Apple.asset, Diamond.asset).
 // /// Create these via Assets > Create > Inventory > Item Data.
 // ///
-// /// World pickups (Item.cs) and, later, merchant stock lists both reference these assets
-// /// rather than duplicating item data, so editing sellValue/icon/name in one place updates
-// /// everywhere the item is used.
+// /// World pickups (Item.cs) and merchant stock lists (NPC.purchasableItems) both reference
+// /// these assets rather than duplicating item data, so editing sellValue/purchasePrice/icon/name
+// /// in one place updates everywhere the item is used.
 // /// </summary>
 // [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item Data")]
 // public class ItemData : ScriptableObject
@@ -23,8 +23,11 @@
 
 //     [Tooltip("Currency the player receives when selling this item to a merchant.")]
 //     public int sellValue;
-// }
 
+//     [Tooltip("Currency the player must pay to buy this item from a merchant that stocks it. " +
+//              "Only relevant for items listed in an NPC's purchasableItems.")]
+//     public int purchasePrice;
+// }
 
 using UnityEngine;
 
@@ -55,4 +58,7 @@ public class ItemData : ScriptableObject
     [Tooltip("Currency the player must pay to buy this item from a merchant that stocks it. " +
              "Only relevant for items listed in an NPC's purchasableItems.")]
     public int purchasePrice;
+
+    [Tooltip("Sound played when this item is picked up from the world.")]
+    public AudioClip pickupSound;
 }
