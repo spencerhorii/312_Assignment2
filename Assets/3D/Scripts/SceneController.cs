@@ -81,6 +81,16 @@ public class SceneController : MonoBehaviour
         StartCoroutine(TransitionAndLoad(sceneName));
     }
 
+    public void EnterHouse(string sceneName)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isTransitioning) return; // prevent double-triggering
+            StartCoroutine(TransitionAndLoad(sceneName));
+            
+        }
+    }
+
     private IEnumerator TransitionAndLoad(string sceneName)
     {
         isTransitioning = true;
