@@ -99,4 +99,8 @@ public class GameData : ScriptableObject
     {
         return CurrentDay;
     }
+    public int getMoney()
+    {
+        return Money;
+    }
 }

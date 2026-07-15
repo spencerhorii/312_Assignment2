@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Authored data defining, for each day, one initial task and the follow-up tasks
 /// that get added once the initial task is completed. Each task carries a money
-/// reward (paid via GameData.addMoney() when fully completed) and named start/end locations.
+/// reward (paid via GameData.addMoney() when completed) and an NPC it's for.
 ///
 /// SETUP: Right-click in the Project window -> Create -> Game Data -> Task Database.
 /// Fill in one entry per day (1 through however many days you're tracking) in the Inspector.
@@ -19,11 +19,8 @@ public class TaskDatabase : ScriptableObject
         public string description;
         public int moneyReward;
 
-        [Tooltip("Name/ID of the location where this task's Part 1 takes place.")]
-        public string startLocation;
-
-        [Tooltip("Name/ID of the location where this task's Part 2 (completion) takes place.")]
-        public string endLocation;
+        [Tooltip("Which NPC this task is for.")]
+        public TaskItem.NPC npc;
     }
 
     [Serializable]

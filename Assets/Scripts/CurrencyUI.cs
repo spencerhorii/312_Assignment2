@@ -14,60 +14,71 @@ public class CurrencyUI : MonoBehaviour
 
     [Tooltip("Optional: the coin icon Image, exposed in case you want to animate/flash it later.")]
     [SerializeField] private UnityEngine.UI.Image coinIcon;
-
-    private bool isSubscribed;
+    [SerializeField] private GameData gameData;
 
     private void Start()
     {
-        // Subscribing in Start() (rather than OnEnable/Awake) guarantees CurrencyManager.Awake()
-        // has already run and set Instance, since Unity runs ALL Awake() calls in the scene
-        // before ANY Start() call. This avoids a script-execution-order race.
-        TrySubscribe();
+        currencyText.text = gameData.getMoney().ToString();
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        // Covers the case where this object is disabled and re-enabled later
-        // (e.g. if the currency UI panel gets toggled off/on at runtime).
-        TrySubscribe();
+        currencyText.text = gameData.getMoney().ToString();
     }
 
-    private void OnDisable()
-    {
-        if (CurrencyManager.Instance != null && isSubscribed)
-        {
-            CurrencyManager.Instance.OnCurrencyChanged -= HandleCurrencyChanged;
-            isSubscribed = false;
-        }
-    }
+    // private bool isSubscribed;
 
-    private void TrySubscribe()
-    {
-        if (isSubscribed) return;
+    // private void Start()
+    // {
+    //     // Subscribing in Start() (rather than OnEnable/Awake) guarantees CurrencyManager.Awake()
+    //     // has already run and set Instance, since Unity runs ALL Awake() calls in the scene
+    //     // before ANY Start() call. This avoids a script-execution-order race.
+    //     TrySubscribe();
+    // }
 
-        if (CurrencyManager.Instance == null)
-        {
-            Debug.LogWarning("CurrencyUI: CurrencyManager.Instance is null. " +
-                              "Make sure a GameManagers object with CurrencyManager exists and is active in the scene.");
-            return;
-        }
+    // private void OnEnable()
+    // {
+    //     // Covers the case where this object is disabled and re-enabled later
+    //     // (e.g. if the currency UI panel gets toggled off/on at runtime).
+    //     TrySubscribe();
+    // }
 
-        CurrencyManager.Instance.OnCurrencyChanged += HandleCurrencyChanged;
-        isSubscribed = true;
+    // private void OnDisable()
+    // {
+    //     if (CurrencyManager.Instance != null && isSubscribed)
+    //     {
+    //         CurrencyManager.Instance.OnCurrencyChanged -= HandleCurrencyChanged;
+    //         isSubscribed = false;
+    //     }
+    // }
 
-        // Initialize immediately with the current value.
-        HandleCurrencyChanged(CurrencyManager.Instance.CurrentCurrency);
-    }
+    // private void TrySubscribe()
+    // {
+    //     if (isSubscribed) return;
 
-    private void HandleCurrencyChanged(int newAmount)
-    {
-        if (currencyText != null)
-        {
-            currencyText.text = newAmount.ToString();
-        }
-        else
-        {
-            Debug.LogWarning("CurrencyUI: currencyText is not assigned in the Inspector.");
-        }
-    }
+    //     if (CurrencyManager.Instance == null)
+    //     {
+    //         Debug.LogWarning("CurrencyUI: CurrencyManager.Instance is null. " +
+    //                           "Make sure a GameManagers object with CurrencyManager exists and is active in the scene.");
+    //         return;
+    //     }
+
+    //     CurrencyManager.Instance.OnCurrencyChanged += HandleCurrencyChanged;
+    //     isSubscribed = true;
+
+    //     // Initialize immediately with the current value.
+    //     HandleCurrencyChanged(CurrencyManager.Instance.CurrentCurrency);
+    // }
+
+    // private void HandleCurrencyChanged(int newAmount)
+    // {
+    //     if (currencyText != null)
+    //     {
+    //         currencyText.text = newAmount.ToString();
+    //     }
+    //     else
+    //     {
+    //         Debug.LogWarning("CurrencyUI: currencyText is not assigned in the Inspector.");
+    //     }
+    // }
 }

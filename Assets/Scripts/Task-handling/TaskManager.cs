@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Manages the active task list for the current day. Listens to GameData.OnDayChanged
-/// to reset tasks each day, seeds a single initial task, and adds the follow-up tasks
-/// once that initial task is fully completed. Only runs up through maxTaskDay.
+/// Manages the active task list for the current day, as a ScriptableObject asset
+/// (like GameData and TaskDatabase) so it can be referenced directly from any scene —
+/// no singleton or DontDestroyOnLoad needed. Any script in any scene that needs to
+/// complete a task just drags in this same asset and calls CompleteTask(taskId).
+///
+/// SETUP: Right-click in the Project window -> Create -> Game Data -> Task Manager.
+/// This creates one TaskManager.asset. Drag that SAME asset into every script (in
+/// every scene) that needs to read the task list or complete a task.
+///
+/// Listens to GameData.OnDayChanged to reset tasks each day, seeds a single initial
+/// task, and adds follow-up tasks once that initial task is completed. Only runs up
+/// through maxTaskDay.
 ///
 /// Also controls GameData.canAdvance: locked (true) when a new day's initial task is
-/// assigned, unlocked (false) once that task is fully completed (Part 2 done) — so
-/// AdvanceDay() only succeeds after the required task is done.
-///
-/// Each task has two parts: Part 1 (reaching/finishing at startLocation) and
-/// Part 2 (reaching/finishing at endLocation — this is what completes the task).
+/// assigned, unlocked (false) once that task is completed — so AdvanceDay() only
+/// succeeds after the required task is done.
 /// </summary>
-public class TaskManager : MonoBehaviour
+[CreateAssetMenu(fileName = "TaskManager", menuName = "Game Data/Task Manager")]
+public class TaskManager : ScriptableObject
 {
     [Tooltip("Same GameData asset used by the rest of the game — provides day/money state.")]
     [SerializeField] private GameData gameData;
@@ -27,22 +34,46 @@ public class TaskManager : MonoBehaviour
 
     public List<TaskItem> ActiveTasks { get; private set; } = new List<TaskItem>();
 
-    /// <summary>Fired whenever the task list changes (tasks added, Part 1 done, or fully completed) — UI can subscribe to refresh.</summary>
+    /// <summary>Fired whenever the task list changes (tasks added or completed) — UI can subscribe to refresh.</summary>
     public event Action OnTaskListChanged;
 
     private TaskDatabase.DayTaskSet currentDaySet;
+    private bool isSubscribed;
 
+    /// <summary>
+    /// Called when Unity loads this asset (roughly once, whenever it's first referenced —
+    /// similar timing to GameData.OnEnable, since ScriptableObjects share that lifecycle).
+    ///
+    /// IMPORTANT: explicitly resets ALL runtime state here rather than trusting default
+    /// values. With "Domain Reload" disabled in Enter Play Mode Settings (a common Editor
+    /// speed optimization), this asset's fields can otherwise carry over stale values —
+    /// leftover tasks, a stale currentDaySet, or a duplicate event subscription — from the
+    /// previous Play session.
+    /// </summary>
     private void OnEnable()
     {
-        gameData.OnDayChanged += HandleDayChanged;
+        ActiveTasks = new List<TaskItem>();
+        currentDaySet = null;
 
-        // Seed tasks for whatever day it currently is when this scene/manager starts.
+        if (isSubscribed)
+        {
+            // Unsubscribe first in case OnEnable fires again without a matching OnDisable
+            // in between (can happen with Domain Reload disabled) — prevents double-firing.
+            gameData.OnDayChanged -= HandleDayChanged;
+        }
+        gameData.OnDayChanged += HandleDayChanged;
+        isSubscribed = true;
+
         SetupTasksForDay(gameData.CurrentDay);
     }
 
     private void OnDisable()
     {
-        gameData.OnDayChanged -= HandleDayChanged;
+        if (isSubscribed)
+        {
+            gameData.OnDayChanged -= HandleDayChanged;
+            isSubscribed = false;
+        }
     }
 
     private void HandleDayChanged(int newDay)
@@ -75,7 +106,7 @@ public class TaskManager : MonoBehaviour
             return;
         }
 
-        // A new day's initial task locks advancing until it's fully completed.
+        // A new day's initial task locks advancing until it's completed.
         gameData.SetCanAdvance(true);
 
         // Assign the single starting task for the day.
@@ -83,46 +114,28 @@ public class TaskManager : MonoBehaviour
             $"day{day}_initial",
             currentDaySet.initialTask.description,
             currentDaySet.initialTask.moneyReward,
-            currentDaySet.initialTask.startLocation,
-            currentDaySet.initialTask.endLocation));
+            currentDaySet.initialTask.npc));
 
         OnTaskListChanged?.Invoke();
     }
 
     /// <summary>
-    /// Call this when the player finishes Part 1 of a task (arrives/completes something at startLocation).
-    /// Does not award money or unlock day advancement — that happens on CompletePart2.
+    /// Call this when the player completes a task — from a UI button's OnClick, a trigger
+    /// collider, or a script in a completely different scene. Since this is a shared asset,
+    /// any script that has this same TaskManager reference can call it directly.
     /// </summary>
-    public void CompletePart1(string taskId)
-    {
-        TaskItem task = ActiveTasks.Find(t => t.id == taskId);
-        if (task == null || task.isPart1Completed || task.isCompleted) return;
-
-        task.isPart1Completed = true;
-        OnTaskListChanged?.Invoke();
-    }
-
-    /// <summary>
-    /// Call this when the player finishes Part 2 of a task (arrives/completes something at endLocation).
-    /// This is what actually completes the task: awards money, unlocks day advancement if this
-    /// was the day's initial task, and adds follow-up tasks if applicable.
-    /// Requires Part 1 to already be completed.
-    /// </summary>
-    public void CompletePart2(string taskId)
+    public void CompleteTask(string taskId)
     {
         TaskItem task = ActiveTasks.Find(t => t.id == taskId);
         if (task == null || task.isCompleted) return;
-
-        if (!task.isPart1Completed)
-        {
-            Debug.LogWarning($"[{nameof(TaskManager)}] Tried to complete Part 2 of task '{taskId}' before Part 1 was done.");
-            return;
-        }
 
         task.isCompleted = true;
         gameData.addMoney(task.moneyReward);
 
         bool wasInitialTask = currentDaySet != null && taskId == $"day{gameData.CurrentDay}_initial";
+
+        // Remove the completed task so it no longer shows up in the visible list.
+        ActiveTasks.Remove(task);
 
         if (wasInitialTask)
         {
@@ -137,8 +150,7 @@ public class TaskManager : MonoBehaviour
                     followUpId,
                     followUp.description,
                     followUp.moneyReward,
-                    followUp.startLocation,
-                    followUp.endLocation));
+                    followUp.npc));
             }
         }
 
