@@ -28,6 +28,7 @@ public class SceneController : MonoBehaviour
     [Tooltip("How long the entry (reverse) transition takes, in seconds.")]
     [SerializeField] private float entryTransitionDuration = 0.5f;
 
+
     private bool isTransitioning;
     private Vector3 normalGameContentScale;
     private float normalUiCanvasScaleFactor;

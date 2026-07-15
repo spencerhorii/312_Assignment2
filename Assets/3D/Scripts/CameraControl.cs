@@ -60,6 +60,12 @@ public class CameraControl : MonoBehaviour
     private float defaultFieldOfView;
     private float zoomBlend; // 0 = default position, 1 = fully zoomed toward target
 
+    /// <summary>
+    /// Current zoom state: 0 = fully zoomed out (default/idle), 1 = fully zoomed in toward target.
+    /// Other scripts (e.g. world-space popups) can read this to react to zoom level.
+    /// </summary>
+    public float ZoomBlend => zoomBlend;
+
     private void Awake()
     {
         basePosition = transform.localPosition;
@@ -119,4 +125,4 @@ public class CameraControl : MonoBehaviour
         basePosition = transform.localPosition;
         baseRotation = transform.localRotation;
     }
-}
+};

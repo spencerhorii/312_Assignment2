@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    private static int energyPoints;
-    private static int money;
+    public static int energyPoints;
+    public static int money;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
