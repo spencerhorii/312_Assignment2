@@ -46,11 +46,20 @@ public class CameraControl : MonoBehaviour
     [Tooltip("How quickly the camera eases back to its default position when no key is held.")]
     [SerializeField] private float zoomOutSpeed = 3f;
 
+    [Tooltip("Shapes the zoom transition over time. X axis = raw progress (0-1), Y axis = eased blend actually applied. Default is linear.")]
+    [SerializeField] private AnimationCurve zoomEaseCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+
     [Tooltip("If true, also pulls in the camera's field of view while zoomed (requires a Camera component).")]
     [SerializeField] private bool affectFieldOfView = true;
 
     [Tooltip("Field of view to use at full zoom-in. Only used if affectFieldOfView is true.")]
     [SerializeField] private float zoomedFieldOfView = 45f;
+
+    [Tooltip("If true, tilts the camera's X rotation (pitch) while zoomed in, then returns to normal when zoomed out.")]
+    [SerializeField] private bool affectXRotation = true;
+
+    [Tooltip("X rotation (pitch, in degrees) to reach at full zoom-in. Applied on top of the camera's base rotation.")]
+    [SerializeField] private float zoomedXRotationDegrees = 20f;
 
     private Vector3 basePosition;
     private Quaternion baseRotation;
@@ -58,13 +67,13 @@ public class CameraControl : MonoBehaviour
 
     private Camera cam;
     private float defaultFieldOfView;
-    private float zoomBlend; // 0 = default position, 1 = fully zoomed toward target
+    private float zoomProgress; // 0 = default, 1 = fully zoomed toward target — raw linear progress, driven by zoomInSpeed/zoomOutSpeed
 
     /// <summary>
-    /// Current zoom state: 0 = fully zoomed out (default/idle), 1 = fully zoomed in toward target.
+    /// Current zoom state after easing: 0 = fully zoomed out (default/idle), 1 = fully zoomed in toward target.
     /// Other scripts (e.g. world-space popups) can read this to react to zoom level.
     /// </summary>
-    public float ZoomBlend => zoomBlend;
+    public float ZoomBlend => zoomEaseCurve != null ? Mathf.Clamp01(zoomEaseCurve.Evaluate(zoomProgress)) : zoomProgress;
 
     private void Awake()
     {
@@ -97,22 +106,25 @@ public class CameraControl : MonoBehaviour
 
         float targetBlend = movementKeyHeld ? 1f : 0f;
         float blendSpeed = movementKeyHeld ? zoomInSpeed : zoomOutSpeed;
-        zoomBlend = Mathf.MoveTowards(zoomBlend, targetBlend, blendSpeed * dt);
+        zoomProgress = Mathf.MoveTowards(zoomProgress, targetBlend, blendSpeed * dt);
+        float easedBlend = ZoomBlend;
 
         Vector3 desiredPosition = basePosition + new Vector3(xOffset, yOffset, 0f);
 
-        if (target != null && zoomBlend > 0f)
+        if (target != null && easedBlend > 0f)
         {
             Vector3 followPoint = Vector3.Lerp(basePosition, target.position, followAmount);
-            desiredPosition = Vector3.Lerp(desiredPosition, followPoint, zoomBlend);
+            desiredPosition = Vector3.Lerp(desiredPosition, followPoint, easedBlend);
         }
 
         transform.localPosition = desiredPosition;
-        transform.localRotation = baseRotation * Quaternion.Euler(0f, 0f, tiltZ);
+
+        float pitchX = affectXRotation ? Mathf.Lerp(0f, zoomedXRotationDegrees, easedBlend) : 0f;
+        transform.localRotation = baseRotation * Quaternion.Euler(pitchX, 0f, tiltZ);
 
         if (affectFieldOfView && cam != null)
         {
-            cam.fieldOfView = Mathf.Lerp(defaultFieldOfView, zoomedFieldOfView, zoomBlend);
+            cam.fieldOfView = Mathf.Lerp(defaultFieldOfView, zoomedFieldOfView, easedBlend);
         }
     }
 
@@ -125,4 +137,4 @@ public class CameraControl : MonoBehaviour
         basePosition = transform.localPosition;
         baseRotation = transform.localRotation;
     }
-};
+}

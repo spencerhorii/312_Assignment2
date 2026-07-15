@@ -2687,7 +2687,7 @@ Transform:
   m_GameObject: {fileID: 859504734}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.92999995, z: 0.78}
+  m_LocalPosition: {x: -0.42, y: -0.92999995, z: 0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2755,8 +2755,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.544879, y: 2.4131882, z: 0.12084222}
-  m_Center: {x: 0.47416115, y: 0.7065941, z: -0.021890044}
+  m_Size: {x: 5.714716, y: 2.4131882, z: 3.4881794}
+  m_Center: {x: 0.6243839, y: 0.7065941, z: -0.51559985}
 --- !u!1 &882325163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,13 +4075,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609362370}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3790523, y: 0, z: 0, w: 0.9253752}
-  m_LocalPosition: {x: 0, y: 37.5, z: -57.1}
+  m_LocalRotation: {x: 0.31564897, y: 0, z: 0, w: 0.9488761}
+  m_LocalPosition: {x: 0, y: 29.54, z: -57.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 44.55, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.8, y: 0, z: 0}
 --- !u!114 &1609362374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,10 +4147,36 @@ MonoBehaviour:
   useUnscaledTime: 0
   target: {fileID: 2051456205}
   followAmount: 0.85
-  zoomInSpeed: 3
+  zoomInSpeed: 2
   zoomOutSpeed: 1
+  zoomEaseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   affectFieldOfView: 1
   zoomedFieldOfView: 60
+  affectXRotation: 1
+  zoomedXRotationDegrees: -20
 --- !u!4 &1631557303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 249666902351645323, guid: 9769dd7b5190545ef900ca4eac0f3517, type: 3}
