@@ -119,6 +119,17 @@ public class keyUI : MonoBehaviour
                 clicked = false;
             }
         }
+        else if(inputKey == " " || inputKey == " ")
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                clicked = true;
+            }
+            else
+            {
+                clicked = false;
+            }
+        }
 
     }
 };
