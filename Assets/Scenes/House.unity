@@ -197,7 +197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &70483084
 Transform:
   m_ObjectHideFlags: 0
@@ -539,6 +539,75 @@ Transform:
   - {fileID: 162941145}
   m_Father: {fileID: 389995803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &114204200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1547655461}
+    m_Modifications:
+    - target: {fileID: 132631894151729036, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050254775732936776, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_Name
+      value: NPC_Bani
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2593403682223714961, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+--- !u!4 &114204201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8281476954920347212, guid: 9649a88359c7ed941857d6eb59c22c4f, type: 3}
+  m_PrefabInstance: {fileID: 114204200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &156869360
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8aae13d3992394dae22805af7dbcd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayManager
-  startingDay: 1
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
 --- !u!1001 &314881815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1416,6 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a9aa5df215bc0a45a7118e60390dca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestInventoryManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
 --- !u!1 &389995802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1235054480}
+  - {fileID: 1547655461}
   - {fileID: 89007569}
   - {fileID: 928045851}
   - {fileID: 1810310070}
@@ -4746,6 +4817,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::boilOnly
   frame1: {fileID: 9205187020295436947, guid: 9baea9e07b1eb40c3be67f24ca878814, type: 3}
   frame2: {fileID: -4904062289966203581, guid: 27dcf9df4b3de4bfe817e372890a14d4, type: 3}
+--- !u!1 &1547655460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547655461}
+  m_Layer: 0
+  m_Name: NPC's
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547655461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547655460}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.0009, y: 1.8192401, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 114204201}
+  m_Father: {fileID: 389995803}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598098983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6671,6 +6774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2979b26d1ae9d042ae77529f5f3a862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
 --- !u!1 &2032370997
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,7 +6894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c43c7536013a44c85fe341ea86999a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  startingCurrency: 500
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
 --- !u!1 &2093121997
 GameObject:
   m_ObjectHideFlags: 0

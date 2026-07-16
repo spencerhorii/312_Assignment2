@@ -126,11 +126,33 @@ public class TaskManager : ScriptableObject
     /// </summary>
     public void CompleteTask(string taskId)
     {
+
+        Debug.Log($"Trying to complete: {taskId}");
+
         TaskItem task = ActiveTasks.Find(t => t.id == taskId);
+
+        if (task == null)
+        {
+            Debug.LogWarning("Task not found.");
+
+            foreach (TaskItem t in ActiveTasks)
+            {
+                Debug.Log($"Existing task: {t.id}");
+            }
+
+            return;
+        }
+
+        if (task == null)
+        {
+            Debug.LogWarning($"Task '{taskId}' not found.");
+            return;
+        }
         if (task == null || task.isCompleted) return;
 
         task.isCompleted = true;
-        gameData.addMoney(task.moneyReward);
+        // gameData.addMoney(task.moneyReward);
+        gameData.AddCurrency(task.moneyReward);
 
         bool wasInitialTask = currentDaySet != null && taskId == $"day{gameData.CurrentDay}_initial";
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -10,19 +11,45 @@ using UnityEngine;
 /// This creates a .asset file. Drag that SAME asset into the GameData field on every
 /// script (in every scene) that needs to read or write shared state.
 /// </summary>
+[System.Serializable]
+
+public class NPCSequenceData
+{
+    [Tooltip("Must match the NPC's npcID exactly.")]
+    public string npcID;
+
+    [Tooltip("Current dialogue sequence for this NPC.")]
+    public int currentSequence = 1;
+}
+
 [CreateAssetMenu(fileName = "GameData", menuName = "Game Data/Game Data")]
 public class GameData : ScriptableObject
 {
     [SerializeField] private int startingDay = 1;
-    [SerializeField] private int startingMoney = 0;
+    // [SerializeField] private int startingMoney = 0;
+    [SerializeField] private int startingCurrency = 0;
     [SerializeField] private int startingEnergy = 5;
 
     [Tooltip("canAdvance acts as a LOCK: true = day advancement is BLOCKED (initial task not done yet), " +
              "false = UNBLOCKED (advancing is allowed). TaskManager flips this each day.")]
     [SerializeField] private bool startingAdvance = true;
 
+    [Header("NPC Progress")]
+
+    [Tooltip("Stores the current dialogue sequence for every NPC in the game.")]
+    [SerializeField] private List<NPCSequenceData> npcSequences = new();
+
+    [Header("Inventory")]
+
+    [Tooltip("The player's regular inventory.")]
+    [SerializeField] private List<ItemData> inventoryItems = new();
+
+    [Tooltip("The player's quest inventory.")]
+    [SerializeField] private List<QuestItemData> questInventoryItems = new();
+
     public int CurrentDay { get; private set; }
-    public int Money { get; private set; }
+    // public int Money { get; private set; }
+    public int Currency { get; private set; }
     public int Energy { get; private set; }
 
     /// <summary>
@@ -45,9 +72,19 @@ public class GameData : ScriptableObject
     private void OnEnable()
     {
         CurrentDay = startingDay;
-        Money = startingMoney;
+        // Money = startingMoney;
+        Currency = startingCurrency;
         Energy = startingEnergy;
         canAdvance = startingAdvance;
+
+        // set all NPC sequence to 1 on enable
+        foreach (NPCSequenceData npc in npcSequences)
+        {
+            npc.currentSequence = 1;
+        }
+
+        inventoryItems.Clear();
+        questInventoryItems.Clear();
     }
 
     /// <summary>
@@ -85,9 +122,19 @@ public class GameData : ScriptableObject
         canAdvance = value;
     }
 
-    public void addMoney(int moneyAdded)
+    // public void addMoney(int moneyAdded)
+    // {
+    //     Money += moneyAdded;
+    // }
+
+    public void SetCurrency(int value)
     {
-        Money += moneyAdded;
+        Currency = value;
+    }
+
+    public void AddCurrency(int amount)
+    {
+        Currency += amount;
     }
 
     public void resetEnergy()
@@ -99,8 +146,84 @@ public class GameData : ScriptableObject
     {
         return CurrentDay;
     }
-    public int getMoney()
+
+    // public int getMoney()
+    // {
+    //     return Money;
+    // }
+
+    public int GetCurrency()
     {
-        return Money;
+        return Currency;
+    }
+
+
+    public int GetNPCSequence(string npcID)
+    {
+        foreach (NPCSequenceData npc in npcSequences)
+        {
+            if (npc.npcID == npcID)
+                return npc.currentSequence;
+        }
+
+        return 1;
+    }
+
+    public void SetNPCSequence(string npcID, int sequence)
+    {
+        foreach (NPCSequenceData npc in npcSequences)
+        {
+            if (npc.npcID == npcID)
+            {
+                npc.currentSequence = sequence;
+                return;
+            }
+        }
+
+        npcSequences.Add(new NPCSequenceData
+        {
+            npcID = npcID,
+            currentSequence = sequence
+        });
+    }
+
+    public List<ItemData> GetInventoryItems()
+    {
+        return inventoryItems;
+    }
+
+    public void AddInventoryItem(ItemData item)
+    {
+        if (item != null)
+            inventoryItems.Add(item);
+    }
+
+    public void RemoveInventoryItem(ItemData item)
+    {
+        inventoryItems.Remove(item);
+    }
+
+    public List<QuestItemData> GetQuestInventoryItems()
+    {
+        return questInventoryItems;
+    }
+
+    public void AddQuestItem(QuestItemData item)
+    {
+        if (item != null)
+            questInventoryItems.Add(item);
+    }
+
+    public void RemoveQuestItem(QuestItemData item)
+    {
+        questInventoryItems.Remove(item);
+    }
+
+    public void ResetNPCSequences()
+    {
+        foreach (NPCSequenceData npc in npcSequences)
+        {
+            npc.currentSequence = 1;
+        }
     }
 }

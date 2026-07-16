@@ -18,12 +18,14 @@ public class CurrencyUI : MonoBehaviour
 
     private void Start()
     {
-        currencyText.text = gameData.getMoney().ToString();
+        // currencyText.text = gameData.getMoney().ToString();
+        currencyText.text = gameData.GetCurrency().ToString();
     }
 
     private void Update()
     {
-        currencyText.text = gameData.getMoney().ToString();
+        // currencyText.text = gameData.getMoney().ToString();
+        currencyText.text = gameData.GetCurrency().ToString();
     }
 
     // private bool isSubscribed;
