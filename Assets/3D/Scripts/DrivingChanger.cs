@@ -13,6 +13,11 @@ public class DrivingChanger : MonoBehaviour
     [SerializeField] GameObject[] missingWave;
     [SerializeField] GameObject[] policeWave2;
     [SerializeField] GameObject fence;
+    [SerializeField] GameObject snowBlock1;
+    [SerializeField] GameObject snowBlock2;
+    [SerializeField] GameObject rockBlock1;
+    [SerializeField] GameObject rockBlock2;
+
 
     private ParticleSystem ps;
     private int prevDay;
@@ -36,6 +41,10 @@ public class DrivingChanger : MonoBehaviour
                 setObjectState(false, policeWave1);
                 setObjectState(false, missingWave);
                 fence.SetActive(true);
+                rockBlock1.SetActive(true);
+                rockBlock2.SetActive(true);
+                snowBlock1.SetActive(true);
+                snowBlock2.SetActive(true);
             }
 
             else if(gd.getDay() == 2)
@@ -73,6 +82,8 @@ public class DrivingChanger : MonoBehaviour
 
             prevDay = gd.getDay();
         }
+
+        handleBlocks();
         
     }
 
@@ -107,6 +118,20 @@ public class DrivingChanger : MonoBehaviour
         foreach (GameObject go in list)
         {
             go.SetActive(state);
+        }
+    }
+
+    private void handleBlocks()
+    {
+        if(gd.suspension == true)
+        {
+            rockBlock1.SetActive(false);
+            rockBlock2.SetActive(false);
+        }
+        if(gd.snowTires == true)
+        {
+            snowBlock1.SetActive(false);
+            snowBlock2.SetActive(false);
         }
     }
 }
