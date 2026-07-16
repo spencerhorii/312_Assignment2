@@ -51,6 +51,8 @@ public class GameData : ScriptableObject
     // public int Money { get; private set; }
     public int Currency { get; private set; }
     public int Energy { get; private set; }
+    public bool snowTires {get; private set;}
+    public bool suspension {get; private set;}
 
     /// <summary>
     /// true = advancing is currently BLOCKED (required task not completed yet).
@@ -76,6 +78,9 @@ public class GameData : ScriptableObject
         Currency = startingCurrency;
         Energy = startingEnergy;
         canAdvance = startingAdvance;
+        snowTires = false;
+        suspension = false;
+
 
         // set all NPC sequence to 1 on enable
         foreach (NPCSequenceData npc in npcSequences)
@@ -230,5 +235,13 @@ public class GameData : ScriptableObject
     public void testDay()
     {
         CurrentDay ++;
+    }
+    public void setSuspension(bool bol)
+    {
+        suspension = bol;
+    }
+    public void setTires(bool bol)
+    {
+        snowTires = bol;
     }
 }
