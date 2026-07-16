@@ -226,4 +226,9 @@ public class GameData : ScriptableObject
             npc.currentSequence = 1;
         }
     }
+
+    public void testDay()
+    {
+        CurrentDay ++;
+    }
 }
