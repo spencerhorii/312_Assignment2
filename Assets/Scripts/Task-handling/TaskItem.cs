@@ -15,7 +15,16 @@ public class TaskItem
     public enum NPC
     {
         Pendi,
-        Pip
+        Pip,
+        Bor,
+        Artur,
+        Tortok,
+        Sam,
+        Kev,
+        Herald,
+        Isabelle,
+        Heri,
+        Coco
     }
     public NPC npc;
 
