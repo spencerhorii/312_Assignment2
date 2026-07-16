@@ -13,17 +13,24 @@ public class TruckMovement : MonoBehaviour
     [SerializeField] private float tractionGrip = 10f; // higher = less sideways sliding (snappier grip)
     [Range(0f, 1f)]
     [SerializeField] private float driftFactor = 0.15f; // 0 = no drift, 1 = ice
-
+    [SerializeField] private GameData gd;
     private Rigidbody rb;
+    private Transform trans;
     private Vector2 moveInput;
 
     private bool moving;
+    private bool sent;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        trans = GetComponent<Transform>();
+        // trans.position = gd.getTruckPos();
         moving = false;
+        sent = true;
+
     }
+
 
     void FixedUpdate()
     {
@@ -67,6 +74,7 @@ public class TruckMovement : MonoBehaviour
                 Animator anim = childTransform.GetComponent<Animator>();
                 anim.SetBool("isDriving", true);
             }
+            sent = false;
         }
         else
         {
@@ -80,6 +88,13 @@ public class TruckMovement : MonoBehaviour
         if(throttle == 0)
         {
             moving = false;
+            if (!sent)
+            {
+                gd.loadTruckPos(trans.position);
+                Debug.Log(gd.getTruckPos());
+                sent = true;
+            }
+
         }
     }
 

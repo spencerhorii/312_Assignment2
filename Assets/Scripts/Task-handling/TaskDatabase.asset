@@ -15,10 +15,17 @@ MonoBehaviour:
   daySets:
   - day: 1
     initialTask:
-      description: <style=H1>Malnourished Mechanic</style> Seek out Pip at the bodega.
+      description: <style=H1>Malnourished Mechanic</style> \nSeek out Pip at the
+        bodega.
       moneyReward: 50
       npc: 0
-    followUpTasks: []
+    followUpTasks:
+    - description: 'TEST '
+      moneyReward: 0
+      npc: 0
+    - description: ALORS LETS GARCONS
+      moneyReward: 0
+      npc: 0
   - day: 2
     initialTask:
       description: <style=H1>This is the Task Name</style> This is the description

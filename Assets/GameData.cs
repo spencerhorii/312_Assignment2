@@ -29,6 +29,7 @@ public class GameData : ScriptableObject
     // [SerializeField] private int startingMoney = 0;
     [SerializeField] private int startingCurrency = 0;
     [SerializeField] private int startingEnergy = 5;
+    [SerializeField] private Vector3 truckPos = new Vector3(0, 0.53f, 0);
 
     [Tooltip("canAdvance acts as a LOCK: true = day advancement is BLOCKED (initial task not done yet), " +
              "false = UNBLOCKED (advancing is allowed). TaskManager flips this each day.")]
@@ -80,6 +81,7 @@ public class GameData : ScriptableObject
         canAdvance = startingAdvance;
         snowTires = false;
         suspension = false;
+
 
 
         // set all NPC sequence to 1 on enable
@@ -243,5 +245,14 @@ public class GameData : ScriptableObject
     public void setTires(bool bol)
     {
         snowTires = bol;
+    }
+
+    public void loadTruckPos(Vector3 newPos)
+    {
+        truckPos = newPos;
+    }
+    public Vector3 getTruckPos()
+    {
+        return truckPos;
     }
 }

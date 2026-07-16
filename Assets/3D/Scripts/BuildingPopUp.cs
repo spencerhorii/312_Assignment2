@@ -6,6 +6,7 @@ public class BuildingPopUp : MonoBehaviour
     [SerializeField] Sprite selected;
     [SerializeField] string loc;
     [SerializeField] SceneController sc;
+    
 
     [Header("Show/Hide Transition")]
     [Tooltip("How far below its normal position the popup hides to.")]
@@ -136,5 +137,5 @@ public class BuildingPopUp : MonoBehaviour
         }
     }
 
-    
+
 };
