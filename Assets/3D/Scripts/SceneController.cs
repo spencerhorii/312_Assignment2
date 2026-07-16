@@ -64,6 +64,12 @@ public class SceneController : MonoBehaviour
 
         if (playEntryTransition)
         {
+            // Freeze player movement until the scale-in transition below finishes.
+            if (PlayerController2D.Instance != null)
+            {
+                PlayerController2D.Instance.CanMove = false;
+            }
+
             // Snap into the "just transitioned out" state, then ease back to normal.
             gameContent.transform.localScale = gameContentTargetScale;
 
@@ -122,6 +128,12 @@ public class SceneController : MonoBehaviour
         }
 
         isTransitioning = false;
+
+        // Entry transition finished — hand movement control back to the player.
+        if (PlayerController2D.Instance != null)
+        {
+            PlayerController2D.Instance.CanMove = true;
+        }
     }
 
     public void ChangeScene(string sceneName)
@@ -142,6 +154,15 @@ public class SceneController : MonoBehaviour
     private IEnumerator TransitionAndLoad(string sceneName)
     {
         isTransitioning = true;
+
+        // Freeze player movement for the duration of the scale-out transition.
+        // Not explicitly re-enabled at the end here since the scene is about to unload —
+        // the new scene's own entry transition (if playEntryTransition is true there) will
+        // re-enable it once IT finishes, assuming the player persists across scenes.
+        if (PlayerController2D.Instance != null)
+        {
+            PlayerController2D.Instance.CanMove = false;
+        }
 
         Vector3 gameContentStartScale = gameContent.transform.localScale;
         float uiCanvasStartScaleFactor = uiCanvasScaler.scaleFactor;

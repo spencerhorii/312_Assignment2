@@ -132,7 +132,6 @@ public class BuildingPopUp : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 sc.ChangeScene(loc);
-                Debug.Log("is reaching");
             }
         }
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353691535d948a64f85644ae1a74eb10, type: 3}
   m_Name: PendiD1S1N12B
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  nodeType: 0
+  nodeType: 3
   lineText: "Awesome, I\u2019ll keep you in mind for future needs."
   speaker: 1
   advancesSequence: 1
@@ -34,7 +34,8 @@ MonoBehaviour:
   completesTask: 1
   taskManager: {fileID: 11400000, guid: d55dacc0850ea4539b32c5077b3bc805, type: 2}
   taskIdToComplete: day1_initial
-  advanceSequenceByPrimaryTask: 0
-  advanceSequenceTarget: 1
+  advanceSequenceByPrimaryTask: 1
+  targetNpcID: bani
+  advanceSequenceTarget: 4
   type1Options: []
   type2Options: []
