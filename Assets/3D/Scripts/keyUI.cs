@@ -130,6 +130,17 @@ public class keyUI : MonoBehaviour
                 clicked = false;
             }
         }
+        else if(inputKey == "TAB")
+        {
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                clicked = true;
+            }
+            else
+            {
+                clicked = false;
+            }
+        }
 
     }
 };

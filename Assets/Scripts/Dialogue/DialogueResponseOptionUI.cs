@@ -22,7 +22,8 @@ public class DialogueResponseOptionUI : MonoBehaviour
         if (optionText == null) return;
 
         Color c = optionText.color;
-        c.a = alpha;
+        optionText.color = new Color(0.54f, 0.06f, 1.56f, 1.0f);
+        // c.a = alpha;
         optionText.color = c;
     }
 }
