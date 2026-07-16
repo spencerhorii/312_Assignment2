@@ -78,7 +78,15 @@ public class catHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        day = gd.getDay() - 1;
+        if(gd.getDay() != 0)
+        {
+            day = gd.getDay() - 1;
+        }
+        else
+        {
+            day = 1;
+        }
+
 
         if (Time.frameCount % 240 == 0) {
             if(sprtNum == 0)

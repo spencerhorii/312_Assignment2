@@ -124,7 +124,7 @@ public class BuildingPopUp : MonoBehaviour
     public void setListening(bool booler)
     {
         listening = booler;
-        SoundFXManager.instance.PlaySoundFXClip(popUp, this.transform, 0.8f);
+        // SoundFXManager.instance.PlaySoundFXClip(popUp, this.transform, 0.8f);
 
         
     }
@@ -135,7 +135,7 @@ public class BuildingPopUp : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SoundFXManager.instance.PlaySoundFXClip(enter, transform, 0.5f);
+                // SoundFXManager.instance.PlaySoundFXClip(enter, transform, 0.5f);
                 sc.ChangeScene(loc);
             }
         }
