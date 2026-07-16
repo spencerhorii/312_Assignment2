@@ -14,6 +14,14 @@ public class TruckMovement : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float driftFactor = 0.15f; // 0 = no drift, 1 = ice
     [SerializeField] private GameData gd;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource engineAudioSource;
+    [SerializeField] private AudioClip engineSound;
+    [SerializeField] private float maxEngineVolume = 1f;
+    [SerializeField] private float fadeInSpeed = 1.5f;  // volume units per second
+    [SerializeField] private float fadeOutSpeed = 1f;   // volume units per second
+
     private Rigidbody rb;
     private Transform trans;
     private Vector2 moveInput;
@@ -29,6 +37,12 @@ public class TruckMovement : MonoBehaviour
         moving = false;
         sent = true;
 
+        if (engineAudioSource != null)
+        {
+            engineAudioSource.clip = engineSound;
+            engineAudioSource.loop = true;
+            engineAudioSource.volume = 0f;
+        }
     }
 
 
@@ -82,7 +96,29 @@ public class TruckMovement : MonoBehaviour
                 Animator anim = childTransform.GetComponent<Animator>();
                 anim.SetBool("isDriving", false);
             }
+        }
 
+        // --- Engine audio fade ---
+        if (engineAudioSource != null)
+        {
+            float targetVolume = moving ? maxEngineVolume : 0f;
+            float fadeSpeed = moving ? fadeInSpeed : fadeOutSpeed;
+
+            if (!engineAudioSource.isPlaying && targetVolume > 0f)
+            {
+                engineAudioSource.Play();
+            }
+
+            engineAudioSource.volume = Mathf.MoveTowards(
+                engineAudioSource.volume,
+                targetVolume,
+                fadeSpeed * Time.fixedDeltaTime
+            );
+
+            if (!moving && engineAudioSource.volume <= 0f)
+            {
+                engineAudioSource.Stop();
+            }
         }
 
         if(throttle == 0)

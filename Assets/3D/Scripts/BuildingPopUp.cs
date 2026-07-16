@@ -30,6 +30,7 @@ public class BuildingPopUp : MonoBehaviour
     private Vector3 shownPosition;
     private Vector3 hiddenPosition;
     private Vector3 shownScale;
+    [SerializeField] private AudioClip popUp, enter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -123,6 +124,8 @@ public class BuildingPopUp : MonoBehaviour
     public void setListening(bool booler)
     {
         listening = booler;
+        SoundFXManager.instance.PlaySoundFXClip(popUp, this.transform, 0.8f);
+
         
     }
 
@@ -130,8 +133,9 @@ public class BuildingPopUp : MonoBehaviour
     {
         if (listening)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                SoundFXManager.instance.PlaySoundFXClip(enter, transform, 0.5f);
                 sc.ChangeScene(loc);
             }
         }

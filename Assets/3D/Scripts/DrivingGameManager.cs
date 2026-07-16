@@ -6,6 +6,7 @@ public class DrivingGameManager : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 540f; // degrees per second, tune for snappiness
     [SerializeField] private List<GameObject> flatAssets = new List<GameObject>();
+    [SerializeField] private AudioClip left, right;
 
     private Transform t;
     private float currRot;
@@ -32,6 +33,7 @@ public class DrivingGameManager : MonoBehaviour
             {
                 flat.GetComponent<FlatAsset>().rotateRight();
             }
+            SoundFXManager.instance.PlaySoundFXClip(right, this.transform, 1f);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -46,6 +48,7 @@ public class DrivingGameManager : MonoBehaviour
             {
                 flat.GetComponent<FlatAsset>().rotateLeft();
             }
+            SoundFXManager.instance.PlaySoundFXClip(left, this.transform, 1f);
         }
 
         // Smoothly rotate towards the target each frame

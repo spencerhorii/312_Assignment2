@@ -17,6 +17,7 @@ public class HoverHandler : MonoBehaviour
     [Header("Camera Zoom Scaling")]
     [Tooltip("The camera's CameraControl script (tracks zoom state).")]
     [SerializeField] private CameraControl cameraControl;
+    
 
     [Tooltip("How much bigger the popup gets (multiplied by its default scale) when the camera is fully zoomed out (idle).")]
     [SerializeField] private float maxScaleMultiplier = 2f;
@@ -26,6 +27,7 @@ public class HoverHandler : MonoBehaviour
     private Vector3 shownPosition;
     private Vector3 hiddenPosition;
     private Vector3 shownScale;
+    [SerializeField] private AudioClip popUp;
 
     private void Start()
     {
@@ -82,5 +84,9 @@ public class HoverHandler : MonoBehaviour
     public void SetListening(bool value)
     {
         listening = value;
+        if(value = true)
+        {
+            SoundFXManager.instance.PlaySoundFXClip(popUp, this.transform, 1f);
+        }
     }
 }
