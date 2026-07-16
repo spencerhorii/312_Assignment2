@@ -10,6 +10,7 @@ public class DrivingChanger : MonoBehaviour
     [SerializeField] GameObject rain;
     [SerializeField] Color day4col, day5col;
     [SerializeField] GameObject[] policeWave1;
+    [SerializeField] GameObject[] missingWave;
     [SerializeField] GameObject[] policeWave2;
 
     private ParticleSystem ps;
@@ -32,12 +33,14 @@ public class DrivingChanger : MonoBehaviour
                 SetLights(0f);
                 rain.SetActive(false);
                 setObjectState(false, policeWave1);
+                setObjectState(false, missingWave);
             }
 
             else if(gd.getDay() == 2)
             {
                 rain.SetActive(true);
                 setRainAmt(20f);
+                setObjectState(true, missingWave);
             }
             else if(gd.getDay() == 3)
             {
