@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     [SerializeField] private GameObject gameContent;
+    [SerializeField] private GameData gd;
+    private int currDay;
     [SerializeField] private CanvasScaler uiCanvasScaler; // drag the Canvas (with CanvasScaler) here
 
     [Header("Transition Settings")]
@@ -84,6 +86,8 @@ public class SceneController : MonoBehaviour
 
             StartCoroutine(PlayEntryTransition());
         }
+
+        currDay = gd.getDay();
     }
 
     private IEnumerator PlayEntryTransition()
@@ -203,5 +207,14 @@ public class SceneController : MonoBehaviour
         }
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void Update()
+    {
+        if(currDay < gd.getDay())
+        {
+            currDay = gd.getDay();
+            ChangeScene("EndOfDay");
+        }
     }
 }
