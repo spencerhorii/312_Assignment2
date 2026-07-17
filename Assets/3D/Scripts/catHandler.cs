@@ -119,23 +119,23 @@ public class catHandler : MonoBehaviour
 
     private void handleText()
     {
-        if(day == 1)
+        if((day-1) == 1)
         {
             tmp.text = "<style=H2>AWESOME JOB</style>" + System.Environment.NewLine + "Day 1 Complete";
         }
-        else if(day == 2)
+        else if((day-1) == 2)
         {
             tmp.text = "<style=H2>GREAT WORK</style>" + System.Environment.NewLine + "Day 2 Complete";
         }
-        else if(day == 3)
+        else if((day-1) == 3)
         {
             tmp.text = "<style=H2>I'M A BIT WORRIED</style>" + System.Environment.NewLine + "Day 3 Complete";
         }
-        else if(day == 4)
+        else if((day-1) == 4)
         {
             tmp.text = "<style=H2>THEY'RE ON TO ME!</style>" + System.Environment.NewLine + "Day 4 Complete";
         }
-        else if(day == 5)
+        else if((day -1) == 5)
         {
             tmp.text = "<style=H2>HELP! ME!</style>" + System.Environment.NewLine + "Day 5 Complete";
         }
