@@ -8,8 +8,10 @@ public class catHandler : MonoBehaviour
     [SerializeField] GameData gd;
     [SerializeField] Sprite[] mains;
     [SerializeField] Sprite[] boils;
+    [SerializeField] AudioClip[] audios;
     [SerializeField] TextMeshProUGUI tmp;
     private Image img;
+    private AudioSource ac;
     private int sprtNum;
     private int day;
 
@@ -33,6 +35,16 @@ public class catHandler : MonoBehaviour
     void Start()
     {
         img = GetComponent<Image>();
+        ac = GetComponent<AudioSource>();
+        if(gd.getDay() == 1)
+        {
+            ac.clip = audios[0];
+        }
+        else
+        {
+            ac.clip = audios[gd.getDay() - 2];
+        }
+
         sprtNum = 0;
         day = 1;
 
@@ -77,59 +89,53 @@ public class catHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(gd.getDay() != 0)
-        {
-            day = gd.getDay() - 1;
-        }
-        else
-        {
-            day = 1;
-        }
+{
+    day = gd.getDay(); // day is now the actual day number, no premature -1
 
-
-        if (Time.frameCount % 240 == 0) {
-            if(sprtNum == 0)
-            {
-                sprtNum = 1;
-            }
-            else if(sprtNum == 1)
-            {
-                sprtNum = 0;
-            }
-        }
-
+    if (Time.frameCount % 240 == 0) {
         if(sprtNum == 0)
         {
-            img.sprite = mains[(day-1)];
+            sprtNum = 1;
         }
         else if(sprtNum == 1)
         {
-            img.sprite = boils[(day-1)];
+            sprtNum = 0;
         }
-
-        handleText();
     }
+
+    int index = Mathf.Clamp(day - 1, 0, mains.Length - 1); // single, safe -1
+
+    if(sprtNum == 0)
+    {
+        img.sprite = mains[index];
+    }
+    else if(sprtNum == 1)
+    {
+        img.sprite = boils[index];
+    }
+
+    handleText();
+}
 
     private void handleText()
     {
-        if(day == 1)
+        if((day-1) == 1)
         {
             tmp.text = "<style=H2>AWESOME JOB</style>" + System.Environment.NewLine + "Day 1 Complete";
         }
-        else if(day == 2)
+        else if((day-1) == 2)
         {
             tmp.text = "<style=H2>GREAT WORK</style>" + System.Environment.NewLine + "Day 2 Complete";
         }
-        else if(day == 3)
+        else if((day-1) == 3)
         {
             tmp.text = "<style=H2>I'M A BIT WORRIED</style>" + System.Environment.NewLine + "Day 3 Complete";
         }
-        else if(day == 4)
+        else if((day-1) == 4)
         {
             tmp.text = "<style=H2>THEY'RE ON TO ME!</style>" + System.Environment.NewLine + "Day 4 Complete";
         }
-        else if(day == 5)
+        else if((day -1) == 5)
         {
             tmp.text = "<style=H2>HELP! ME!</style>" + System.Environment.NewLine + "Day 5 Complete";
         }

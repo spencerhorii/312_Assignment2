@@ -412,7 +412,6 @@
 //     }
 // }
 
-
 using UnityEngine;
 
 /// <summary>
@@ -463,6 +462,25 @@ public class PlayerController2D : MonoBehaviour
     [Tooltip("Number of inventory slots this player has. Drives the size of the inventory UI.")]
     [SerializeField] private int inventorySlots = 4;
 
+    [Header("Audio")]
+    [Tooltip("AudioSource used for the looping footstep sound.")]
+    [SerializeField] private AudioSource walkAudioSource;
+
+    [Tooltip("Looping footstep/walking clip.")]
+    [SerializeField] private AudioClip walkClip;
+
+    [Tooltip("Volume the walking sound fades up to while moving on the ground.")]
+    [SerializeField] private float walkVolume = 0.6f;
+
+    [Tooltip("How quickly the walk sound fades in/out (volume units per second).")]
+    [SerializeField] private float walkVolumeLerpSpeed = 6f;
+
+    [Tooltip("One-shot sound played when the player jumps.")]
+    [SerializeField] private AudioClip jumpClip;
+
+    [Tooltip("Volume for the jump sound.")]
+    [SerializeField] private float jumpVolume = 0.8f;
+
     [Header("State")]
     [Tooltip("When false (e.g. during dialogue or while the inventory is open), all movement input is ignored.")]
     public bool CanMove = true;
@@ -510,6 +528,13 @@ public class PlayerController2D : MonoBehaviour
         }
 
         ApplyFacing();
+
+        if (walkAudioSource != null)
+        {
+            walkAudioSource.clip = walkClip;
+            walkAudioSource.loop = true;
+            walkAudioSource.volume = 0f;
+        }
     }
 
     private void Start()
@@ -539,6 +564,7 @@ public class PlayerController2D : MonoBehaviour
         if (!CanMove)
         {
             horizontalInput = 0f;
+            UpdateWalkAudio();
             return;
         }
 
@@ -549,7 +575,10 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             jumpRequested = true;
+            PlayJumpSound();
         }
+
+        UpdateWalkAudio();
     }
 
     private void FixedUpdate()
@@ -622,6 +651,48 @@ public class PlayerController2D : MonoBehaviour
         {
             spriteRenderer.flipX = CurrentFacing == FacingDirection.Left;
         }
+    }
+
+    /// <summary>
+    /// Fades the looping footstep sound in while walking on the ground, and out otherwise.
+    /// </summary>
+    private void UpdateWalkAudio()
+    {
+        if (walkAudioSource == null) return;
+
+        bool isWalking = isGrounded && Mathf.Abs(horizontalInput) > 0.01f;
+        float targetVolume = isWalking ? walkVolume : 0f;
+
+        if (isWalking && !walkAudioSource.isPlaying)
+        {
+            walkAudioSource.Play();
+        }
+
+        walkAudioSource.volume = Mathf.MoveTowards(
+            walkAudioSource.volume,
+            targetVolume,
+            walkVolumeLerpSpeed * Time.deltaTime);
+
+        if (!isWalking && walkAudioSource.volume <= 0f && walkAudioSource.isPlaying)
+        {
+            walkAudioSource.Stop();
+        }
+    }
+
+    /// <summary>
+    /// Plays a one-shot jump sound via SoundFXManager, if both are available.
+    /// </summary>
+    private void PlayJumpSound()
+    {
+        if (jumpClip == null) return;
+
+        if (SoundFXManager.instance == null)
+        {
+            Debug.LogWarning("[PlayerController2D] SoundFXManager.instance is null.", this);
+            return;
+        }
+
+        SoundFXManager.instance.PlaySoundFXClip(jumpClip, transform, jumpVolume);
     }
 
     private void OnDrawGizmosSelected()
