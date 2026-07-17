@@ -2843,7 +2843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.20392159, g: 0, b: 0.6117647, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4216,6 +4216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9926cbd4d14534a89182cf05aae812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
   insufficientFundsMessageDuration: 1
 --- !u!1 &1186642457
 GameObject:
@@ -6723,7 +6724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 95.62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1884562339
@@ -7931,6 +7932,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   charactersPerSecond: 40
+  playerVoiceData: {fileID: 0}
+  continueSound: {fileID: 0}
+  switchOptionSound: {fileID: 0}
+  confirmOptionSound: {fileID: 0}
 --- !u!1 &2127207882
 GameObject:
   m_ObjectHideFlags: 0

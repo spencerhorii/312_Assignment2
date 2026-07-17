@@ -436,6 +436,28 @@ public class InventoryManager : MonoBehaviour
     /// Attempts to add an item to the first available slot. Returns false if the inventory is full
     /// (or not yet initialized), true if the item was successfully added.
     /// </summary>
+    // public bool TryAddItem(ItemData item)
+    // {
+    //     if (!IsInitialized || item == null) return false;
+
+    //     for (int i = 0; i < slots.Length; i++)
+    //     {
+    //         if (slots[i] == null)
+    //         {
+    //         slots[i] = item;
+
+    //         gameData.AddInventoryItem(item);
+
+    //         OnInventoryChanged?.Invoke(slots);
+    //         OnItemAdded?.Invoke(item, i);
+
+    //         return true;
+    //         }
+    //     }
+
+    //     return false; // full
+    // }
+
     public bool TryAddItem(ItemData item)
     {
         if (!IsInitialized || item == null) return false;
@@ -444,18 +466,34 @@ public class InventoryManager : MonoBehaviour
         {
             if (slots[i] == null)
             {
-            slots[i] = item;
+                slots[i] = item;
 
-            gameData.AddInventoryItem(item);
+                gameData.AddInventoryItem(item);
+                ApplyUpgradeEffect(item);
 
-            OnInventoryChanged?.Invoke(slots);
-            OnItemAdded?.Invoke(item, i);
+                OnInventoryChanged?.Invoke(slots);
+                OnItemAdded?.Invoke(item, i);
 
-            return true;
+                return true;
             }
         }
 
         return false; // full
+    }
+
+    private void ApplyUpgradeEffect(ItemData item)
+    {
+        if (gameData == null) return;
+
+        switch (item.upgradeEffect)
+        {
+            case ItemData.ItemUpgradeEffect.SnowTires:
+                gameData.setTires(true);
+                break;
+            case ItemData.ItemUpgradeEffect.Suspension:
+                gameData.setSuspension(true);
+                break;
+        }
     }
 
     /// <summary>
@@ -479,14 +517,38 @@ public class InventoryManager : MonoBehaviour
     /// Actually removes the item at the given slot index and shifts remaining items down to
     /// fill the gap (reorder). Called by InventoryUI once its removal animation completes.
     /// </summary>
+    
+    
+    // public void ConfirmRemoval(int index)
+    // {
+    //     if (!IsInitialized || index < 0 || index >= slots.Length) return;
+
+    //     for (int i = index; i < slots.Length - 1; i++)
+    //     {
+    //         slots[i] = slots[i + 1];
+    //     }
+    //     ItemData removedItem = slots[index];
+
+    //     for (int i = index; i < slots.Length - 1; i++)
+    //     {
+    //         slots[i] = slots[i + 1];
+    //     }
+
+    //     slots[slots.Length - 1] = null;
+
+    //     if (gameData != null && removedItem != null)
+    //     {
+    //         gameData.RemoveInventoryItem(removedItem);
+    //     }
+
+    //     OnInventoryChanged?.Invoke(slots);
+    // }
+
+
     public void ConfirmRemoval(int index)
     {
         if (!IsInitialized || index < 0 || index >= slots.Length) return;
 
-        for (int i = index; i < slots.Length - 1; i++)
-        {
-            slots[i] = slots[i + 1];
-        }
         ItemData removedItem = slots[index];
 
         for (int i = index; i < slots.Length - 1; i++)

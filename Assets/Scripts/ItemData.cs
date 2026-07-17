@@ -42,9 +42,30 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item Data")]
 public class ItemData : ScriptableObject
 {
+    public enum ItemUpgradeEffect
+    {
+        None,
+        SnowTires,
+        Suspension
+    }
+
     [Tooltip("Unique identifier used to reference this item in code (quest checks, save data, etc). " +
              "Keep this unique across all ItemData assets - uniqueness is not enforced automatically.")]
     public string itemID;
+
+    // ... existing fields unchanged ...
+
+    [Header("Special Behavior")]
+    [Tooltip("If set, adding this item to the inventory permanently unlocks the matching upgrade in GameData. Leave as None for regular items.")]
+    public ItemUpgradeEffect upgradeEffect = ItemUpgradeEffect.None;
+
+    [Tooltip("Whether this item can be sold back at a shop. Uncheck for key items like Snow Tires / Suspension.")]
+    public bool canBeSold = true;
+
+
+    // [Tooltip("Unique identifier used to reference this item in code (quest checks, save data, etc). " +
+    //          "Keep this unique across all ItemData assets - uniqueness is not enforced automatically.")]
+    // public string itemID;
 
     [Tooltip("Display name shown in UI (inventory label, merchant menu, etc).")]
     public string itemName;

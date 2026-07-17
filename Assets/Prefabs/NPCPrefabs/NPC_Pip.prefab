@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 132631894151729036}
   - component: {fileID: 4850670714532732489}
   - component: {fileID: 4033738515078903321}
+  - component: {fileID: 315817150925582107}
   m_Layer: 0
   m_Name: NPC_Pip
   m_TagString: Untagged
@@ -158,8 +159,42 @@ MonoBehaviour:
       startNode: {fileID: 11400000, guid: f7004cee6dc05934f89b63c74af08f27, type: 2}
     - sequence: 2
       startNode: {fileID: 11400000, guid: 24514e4072e42274789af54dc770db2d, type: 2}
+  - day: 2
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 69cf6aac71b223545b38ea927cee1e45, type: 2}
+  - day: 3
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 4b3c3bbdcca51c4498f43453215cd596, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: 7c84969f3dafcac4d92982108e4edd16, type: 2}
+  - day: 4
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 22b8559e466983d4a8750b3a67f527e9, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: 1826a42e8c923b044bade209f0d1644f, type: 2}
+  - day: 5
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 23cf2152449f2154998835c7d31d62b8, type: 2}
   isMerchant: 0
   purchasableItems: []
+--- !u!114 &315817150925582107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050254775732936776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcefd723fbf44818a8353c5d238ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::boilSprite
+  frame1: {fileID: -2612478840265490260, guid: 9a82f3b84673ec941a4e11a9436e37f2, type: 3}
+  frame2: {fileID: 8076360154945415189, guid: d2fe9c231d91c6e4ab2e888bf9ba4637, type: 3}
 --- !u!1 &2593403682223714961
 GameObject:
   m_ObjectHideFlags: 0

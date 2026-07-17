@@ -1025,6 +1025,66 @@ MonoBehaviour:
     m_RotationOrder: 4
   removalCloseDelay: 0.4
   dimmedAlpha: 0.5
+--- !u!1001 &290800136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1050254775732936776, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_Name
+      value: NPC_Kev
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.572
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2593403682223714961, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: ceb2006467879fa45a19ed54de9fa962, type: 3}
 --- !u!1 &291988010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,6 +4117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9926cbd4d14534a89182cf05aae812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
   insufficientFundsMessageDuration: 1
 --- !u!1 &1165012494
 GameObject:
@@ -7747,6 +7808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   charactersPerSecond: 40
+  playerVoiceData: {fileID: 0}
+  continueSound: {fileID: 0}
+  switchOptionSound: {fileID: 0}
+  confirmOptionSound: {fileID: 0}
 --- !u!1 &2131257543
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,3 +7990,4 @@ SceneRoots:
   - {fileID: 1273851895}
   - {fileID: 314881815}
   - {fileID: 690509827}
+  - {fileID: 290800136}

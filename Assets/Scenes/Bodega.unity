@@ -4461,6 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9926cbd4d14534a89182cf05aae812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
   insufficientFundsMessageDuration: 1
 --- !u!1 &1200655325
 GameObject:
@@ -7959,6 +7960,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   charactersPerSecond: 40
+  playerVoiceData: {fileID: 0}
+  continueSound: {fileID: 0}
+  switchOptionSound: {fileID: 0}
+  confirmOptionSound: {fileID: 0}
 --- !u!1 &2132191873
 GameObject:
   m_ObjectHideFlags: 0

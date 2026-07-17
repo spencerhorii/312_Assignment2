@@ -410,13 +410,18 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     private enum ShopColumn { Sell = 0, Purchase = 1, Exit = 2 }
-    private enum ShopPhase { Browsing, Confirming, InsufficientFunds }
+    // private enum ShopPhase { Browsing, Confirming, InsufficientFunds }
+    private enum ShopPhase { Browsing, Confirming, TemporaryMessage }
     private enum ConfirmAction { None, Sell, Purchase, Leave }
 
     private const int SlotsPerColumn = 8;
     private const int GridColumns = 2;
 
     public static ShopManager Instance { get; private set; }
+
+    [Header("Data")]
+    [Tooltip("Same GameData asset used across the project - tracks one-time shop purchases.")]
+    [SerializeField] private GameData gameData;
 
     [Header("Insufficient Funds")]
     [Tooltip("How long the 'Insufficient Funds' message stays up before reverting to the normal hover text.")]
@@ -542,11 +547,23 @@ public class ShopManager : MonoBehaviour
             }
         }
 
+        // purchaseSlots = new ItemData[SlotsPerColumn];
+        // if (currentShop != null && currentShop.itemsForSale != null)
+        // {
+        //     int count = Mathf.Min(SlotsPerColumn, currentShop.itemsForSale.Count);
+        //     for (int i = 0; i < count; i++) purchaseSlots[i] = currentShop.itemsForSale[i];
+        // }
+
         purchaseSlots = new ItemData[SlotsPerColumn];
         if (currentShop != null && currentShop.itemsForSale != null)
         {
             int count = Mathf.Min(SlotsPerColumn, currentShop.itemsForSale.Count);
-            for (int i = 0; i < count; i++) purchaseSlots[i] = currentShop.itemsForSale[i];
+            for (int i = 0; i < count; i++)
+            {
+                ItemData item = currentShop.itemsForSale[i];
+                bool alreadyPurchased = item != null && gameData != null && gameData.HasPurchasedItem(item.itemID);
+                purchaseSlots[i] = alreadyPurchased ? null : item;
+            }
         }
 
         OnSlotsChanged?.Invoke(sellSlots, purchaseSlots);
@@ -656,33 +673,63 @@ public class ShopManager : MonoBehaviour
         if (currentColumn == ShopColumn.Purchase)
         {
             bool canAfford = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAfford(item.purchasePrice);
+            // if (!canAfford)
+            // {
+            //     ShowInsufficientFundsMessage();
+            //     return;
+            // }
             if (!canAfford)
             {
-                ShowInsufficientFundsMessage();
+                ShowTemporaryMessage("Insufficient Funds");
                 return;
             }
             BeginConfirm(ConfirmAction.Purchase, item, currentIndex);
         }
         else
         {
+            if (!item.canBeSold)
+            {
+                ShowTemporaryMessage("Cannot Be Sold");
+                return;
+            }
             BeginConfirm(ConfirmAction.Sell, item, currentIndex);
         }
     }
 
-    private void ShowInsufficientFundsMessage()
+    // private void ShowInsufficientFundsMessage()
+    // {
+    //     phase = ShopPhase.InsufficientFunds;
+    //     OnBottomTextChanged?.Invoke("Insufficient Funds");
+
+    //     if (insufficientFundsCoroutine != null) StopCoroutine(insufficientFundsCoroutine);
+    //     insufficientFundsCoroutine = StartCoroutine(RevertAfterInsufficientFunds());
+    // }
+
+    // private IEnumerator RevertAfterInsufficientFunds()
+    // {
+    //     yield return new WaitForSeconds(insufficientFundsMessageDuration);
+
+    //     if (phase == ShopPhase.InsufficientFunds)
+    //     {
+    //         phase = ShopPhase.Browsing;
+    //         UpdateSelectionAndText();
+    //     }
+    // }
+
+    private void ShowTemporaryMessage(string message)
     {
-        phase = ShopPhase.InsufficientFunds;
-        OnBottomTextChanged?.Invoke("Insufficient Funds");
+        phase = ShopPhase.TemporaryMessage;
+        OnBottomTextChanged?.Invoke(message);
 
         if (insufficientFundsCoroutine != null) StopCoroutine(insufficientFundsCoroutine);
-        insufficientFundsCoroutine = StartCoroutine(RevertAfterInsufficientFunds());
+        insufficientFundsCoroutine = StartCoroutine(RevertAfterTemporaryMessage());
     }
 
-    private IEnumerator RevertAfterInsufficientFunds()
+    private IEnumerator RevertAfterTemporaryMessage()
     {
         yield return new WaitForSeconds(insufficientFundsMessageDuration);
 
-        if (phase == ShopPhase.InsufficientFunds)
+        if (phase == ShopPhase.TemporaryMessage)
         {
             phase = ShopPhase.Browsing;
             UpdateSelectionAndText();
@@ -748,20 +795,37 @@ public class ShopManager : MonoBehaviour
                     }
                     break;
 
+                // case ConfirmAction.Purchase:
+                //     if (InventoryManager.Instance != null && CurrencyManager.Instance != null)
+                //     {
+                //         bool added = InventoryManager.Instance.TryAddItem(pendingItem);
+                //         if (added)
+                //         {
+                //             CurrencyManager.Instance.SpendCurrency(pendingItem.purchasePrice);
+                //         }
+                //         // If inventory was full at the moment of confirming (rare - checked at
+                //         // select time, not confirm time), the purchase silently doesn't happen
+                //         // and currency isn't spent. Not shown to the player as a special message
+                //         // currently - straightforward to add later if this comes up in testing.
+                //     }
+                //     break;
+
                 case ConfirmAction.Purchase:
-                    if (InventoryManager.Instance != null && CurrencyManager.Instance != null)
+                if (InventoryManager.Instance != null && CurrencyManager.Instance != null)
+                {
+                    bool added = InventoryManager.Instance.TryAddItem(pendingItem);
+                    if (added)
                     {
-                        bool added = InventoryManager.Instance.TryAddItem(pendingItem);
-                        if (added)
+                        CurrencyManager.Instance.SpendCurrency(pendingItem.purchasePrice);
+
+                        if (gameData != null)
                         {
-                            CurrencyManager.Instance.SpendCurrency(pendingItem.purchasePrice);
+                            gameData.MarkItemPurchased(pendingItem.itemID);
+                            RefreshSlots();
                         }
-                        // If inventory was full at the moment of confirming (rare - checked at
-                        // select time, not confirm time), the purchase silently doesn't happen
-                        // and currency isn't spent. Not shown to the player as a special message
-                        // currently - straightforward to add later if this comes up in testing.
                     }
-                    break;
+                }
+                break;
 
                 case ConfirmAction.Leave:
                     CloseShop();

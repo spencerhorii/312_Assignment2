@@ -48,10 +48,19 @@ public class GameData : ScriptableObject
     [Tooltip("The player's quest inventory.")]
     [SerializeField] private List<QuestItemData> questInventoryItems = new();
 
+    [Header("Shop Purchases")]
+    [Tooltip("itemIDs already bought from a shop this session - prevents re-buying one-time items. Resets in OnEnable like everything else here.")]
+    [SerializeField] private List<string> purchasedItemIDs = new();
+
+    [Header("Bani Favour")]
+    [Tooltip("Starting Bani Favour value. Usually 0.")]
+    [SerializeField] private int startingBaniFavour = 0;
+
     public int CurrentDay { get; private set; }
     // public int Money { get; private set; }
     public int Currency { get; private set; }
     public int Energy { get; private set; }
+    public int BaniFavour { get; private set; }
     public bool snowTires {get; private set;}
     public bool suspension {get; private set;}
 
@@ -81,6 +90,8 @@ public class GameData : ScriptableObject
         canAdvance = startingAdvance;
         snowTires = false;
         suspension = false;
+        BaniFavour = startingBaniFavour;
+
 
 
 
@@ -90,8 +101,12 @@ public class GameData : ScriptableObject
             npc.currentSequence = 1;
         }
 
+        // inventoryItems.Clear();
+        // questInventoryItems.Clear();
+
         inventoryItems.Clear();
         questInventoryItems.Clear();
+        purchasedItemIDs.Clear();
     }
 
     /// <summary>
@@ -255,4 +270,32 @@ public class GameData : ScriptableObject
     {
         return truckPos;
     }
+
+
+
+
+    public bool HasPurchasedItem(string itemID)
+    {
+        return !string.IsNullOrEmpty(itemID) && purchasedItemIDs.Contains(itemID);
+    }
+
+    public void MarkItemPurchased(string itemID)
+    {
+        if (string.IsNullOrEmpty(itemID)) return;
+        if (!purchasedItemIDs.Contains(itemID))
+            purchasedItemIDs.Add(itemID);
+    }
+
+
+    public void AddBaniFavour(int amount)
+    {
+        BaniFavour += amount;
+    }
+
+    public void SetBaniFavour(int value)
+    {
+        BaniFavour = value;
+    }
+
+
 }

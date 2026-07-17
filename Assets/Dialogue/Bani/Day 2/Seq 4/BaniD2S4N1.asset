@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353691535d948a64f85644ae1a74eb10, type: 3}
+  m_Name: BaniD2S4N1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  nodeType: 1
+  lineText: Speaking of the library, did you happen to get that romance novel I asked
+    for?
+  speaker: 0
+  advancesSequence: 0
+  musicAction: 0
+  musicTrackToQueue: {fileID: 0}
+  musicFadeDuration: 1
+  nextNode: {fileID: 0}
+  awardsItem: 0
+  itemToAward: {fileID: 0}
+  inventoryFullLineText: 
+  alreadyAwardedLineText: 
+  awardsQuestItem: 0
+  questItemToAward: {fileID: 0}
+  alreadyAwardedQuestItemLineText: 
+  opensShop: 0
+  shopToOpen: {fileID: 0}
+  triggersDayAdvance: 0
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
+  completesTask: 0
+  taskManager: {fileID: 0}
+  taskIdToComplete: 
+  advanceSequenceByPrimaryTask: 0
+  targetNpcID: 
+  advanceSequenceTarget: 1
+  type1Options:
+  - optionText: Give romance novel
+    nextNode: {fileID: 11400000, guid: 99885ad6e50d4734faacf0dab5b89f05, type: 2}
+    actionID: 
+    awardsItem: 0
+    itemToAward: {fileID: 0}
+    removesItem: 0
+    itemToRemove: {fileID: 0}
+    awardsQuestItem: 0
+    questItemToAward: {fileID: 0}
+    removesQuestItem: 1
+    questItemToRemove: {fileID: 11400000, guid: 0e13e069fd4a8e642820cad370ed30d6, type: 2}
+    itemMissingLineText: Oh, that's not a romance novel babe...
+  - optionText: About that...
+    nextNode: {fileID: 11400000, guid: b3e3cb3274ce041438f6be36d8c56b21, type: 2}
+    actionID: 
+    awardsItem: 0
+    itemToAward: {fileID: 0}
+    removesItem: 0
+    itemToRemove: {fileID: 0}
+    awardsQuestItem: 0
+    questItemToAward: {fileID: 0}
+    removesQuestItem: 0
+    questItemToRemove: {fileID: 0}
+    itemMissingLineText: 
+  type2Options: []

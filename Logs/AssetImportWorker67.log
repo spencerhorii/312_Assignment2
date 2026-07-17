@@ -1,0 +1,532 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.16f1 (a56f230f6470) revision 10841891'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-07-17T00:56:38.4619061Z"
+OS: 'Windows 11  (10.0.26100) CoreSingleLanguage' Language: 'en' Physical Memory: 32108 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-07-17T00:56:38Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker67
+-projectPath
+D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+-logFile
+Logs/AssetImportWorker67.log
+-srvPort
+49722
+-licensingIpc
+LicenseClient-User
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [34124]  Target information:
+
+Player connection [34124]  * "[IP] 192.168.1.97 [Port] 0 [Flags] 2 [Guid] 3248810027 [EditorId] 3248810027 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-OVH4FSK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [34124] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [34124] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 6.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.16f1 (a56f230f6470)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Vendor:          NVIDIA
+    VRAM:            5996 MB
+    App VRAM Budget: 5228 MB
+    Driver:          32.0.15.8088
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56212
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-User"
+[Licensing::IpcConnector] LicenseClient-User channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.3.16" at "2026-07-17T00:56:39.8088003Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 29352, path: "C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              4f3331fefe754eb6a07fc361beb9e120
+  Correlation Id:          47882071dff180c034864f0352291f7f
+  External correlation Id: 1796941386407641605
+  Machine Id:              NKcRUsz1GwU4Q4WJtDcG2fyxkZM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User-6000.3.16" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.3.16-notifications" at "2026-07-17T00:56:39.81682Z"
+[Licensing::Module] Licensing Background thread has ended after 1.36s
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002417 seconds.
+- Loaded All Assemblies, in  0.494 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.452 seconds
+Domain Reload Profiling: 939ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (198ms)
+		LoadAssemblies (166ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (195ms)
+			TypeCache.Refresh (192ms)
+				TypeCache.ScanAssembly (177ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (453ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (393ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (56ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (88ms)
+			ProcessInitializeOnLoadAttributes (163ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 3574399251830-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  0.973 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 2.32 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.13 ms, found 5 plugins.
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.989 seconds
+Domain Reload Profiling: 1957ms
+	BeginReloadAssembly (208ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (657ms)
+		LoadAssemblies (416ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (352ms)
+			TypeCache.Refresh (245ms)
+				TypeCache.ScanAssembly (229ms)
+			BuildScriptInfoCaches (89ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (989ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (784ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (171ms)
+			ProcessInitializeOnLoadAttributes (458ms)
+			ProcessInitializeOnLoadMethodAttributes (139ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.11 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7649 unused Assets / (5.3 MB). Loaded Objects now: 8481.
+Memory consumption went from 165.5 MB to 160.2 MB.
+Total: 10.029800 ms (FindLiveObjects: 0.743800 ms CreateObjectMapping: 0.509200 ms MarkObjects: 6.004300 ms  DeleteObjects: 2.770900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 116920.409867 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6
+  artifactKey: Guid(2b1052d52e893324396a4d7e42cabfbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6 using Guid(2b1052d52e893324396a4d7e42cabfbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a16a907f02ca55ec524724415347209a') in 0.0078849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.002205 seconds.
+  path: Assets/Scripts/Dialogue/DialogueNode.cs
+  artifactKey: Guid(353691535d948a64f85644ae1a74eb10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Dialogue/DialogueNode.cs using Guid(353691535d948a64f85644ae1a74eb10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd9b71f005b208e4b2db0d81968a30181') in 0.0805426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/GameData.cs
+  artifactKey: Guid(9f2f389e06717421292671f6716a10d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/GameData.cs using Guid(9f2f389e06717421292671f6716a10d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b4fb0a3a4b01f78c55cdde865a8b5a96') in 0.0117246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.913432 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset
+  artifactKey: Guid(328887b14563d3741829aedb8ae70a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset using Guid(328887b14563d3741829aedb8ae70a8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '95314c366203abaa50e6662b021d1e60') in 0.0157136 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.933516 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset
+  artifactKey: Guid(328887b14563d3741829aedb8ae70a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset using Guid(328887b14563d3741829aedb8ae70a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7ed9b2da1766ec5f2df34b053e63bc4d') in 0.060822 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.900387 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 2.asset
+  artifactKey: Guid(a1e77110c9edc3341807ba6ee6db4170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 2.asset using Guid(a1e77110c9edc3341807ba6ee6db4170) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd1317860b2fc3f856ab3da45306e9c7') in 0.0010803 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.910748 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 5/BaniD3S5N2A.asset
+  artifactKey: Guid(044d9b7324ba869469c94cc120cf1e0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 5/BaniD3S5N2A.asset using Guid(044d9b7324ba869469c94cc120cf1e0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '37630b7f31cef12aa29e3af361e304d2') in 0.0181033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 2.asset
+  artifactKey: Guid(a1e77110c9edc3341807ba6ee6db4170) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 2.asset using Guid(a1e77110c9edc3341807ba6ee6db4170) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ffba7ed4c50588c6b1df5ef68ae3ac22') in 0.0152481 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.696307 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset
+  artifactKey: Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset using Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '514bcf03006a028ecd29020e1b0dc076') in 0.0012179 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.915617 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset
+  artifactKey: Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset using Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2a8e4765fb8d6071753f97da641abb0f') in 0.0123362 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.588739 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 4.asset
+  artifactKey: Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 4.asset using Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bceb84d732c43584316f9568ccc8dd00') in 0.0011113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.283952 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 5.asset
+  artifactKey: Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 5.asset using Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6c9ad57178961482842dda044713317c') in 0.0010781 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.371977 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 4.asset
+  artifactKey: Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 4.asset using Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8467d4b23a258a2385101a6c765cb655') in 0.0157241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.138853 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset
+  artifactKey: Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset using Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b895126647697d4712dcf3da5b9613f6') in 0.0010738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.924453 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset
+  artifactKey: Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset using Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c1afdd59020f6cadd7e91f60b81414dc') in 0.0127498 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.870636 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset
+  artifactKey: Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset using Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '206fd057be7b5bc6f01e8d04bab2c6aa') in 0.0046305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.925245 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset
+  artifactKey: Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset using Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b98699eaf8e28a8079e07ceda278a82e') in 0.0134921 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 263.707303 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1
+  artifactKey: Guid(d28660d85aae38a4ca127febc7b4d9ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1 using Guid(d28660d85aae38a4ca127febc7b4d9ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aa600cd12bc91fa1e4cc378df26926c7') in 0.0006008 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.365715 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 1.asset
+  artifactKey: Guid(4b3c3bbdcca51c4498f43453215cd596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 1.asset using Guid(4b3c3bbdcca51c4498f43453215cd596) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5dbfe9a32e303aa43d0d4d234a2ab630') in 0.0011319 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.972070 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 1.asset
+  artifactKey: Guid(4b3c3bbdcca51c4498f43453215cd596) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 1.asset using Guid(4b3c3bbdcca51c4498f43453215cd596) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a6ff4b8fffa06281c70604cbffb36597') in 0.013083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.388551 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 2.asset
+  artifactKey: Guid(68f9518a7841c08488c9bca283193968) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 2.asset using Guid(68f9518a7841c08488c9bca283193968) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9fb4dd18c6f5ead8bf59163d5bfa2e02') in 0.0011356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.362681 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 3.asset
+  artifactKey: Guid(385ffe7f6ad1285438e0f0e47480e4ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 3.asset using Guid(385ffe7f6ad1285438e0f0e47480e4ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f51840693d7d565f4de1c56cb75c5773') in 0.0012467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.420349 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 4.asset
+  artifactKey: Guid(fe0974d6adf13f84d82b5a7d890f40cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 4.asset using Guid(fe0974d6adf13f84d82b5a7d890f40cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a1f2397cf135c56011f5f68fb774eb41') in 0.0011493 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.400125 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 5.asset
+  artifactKey: Guid(e8539b86653f03f42a7edce3517bf148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 5.asset using Guid(e8539b86653f03f42a7edce3517bf148) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4370909bcf7b7a8a394bdafad757b039') in 0.0011034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.424403 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 6.asset
+  artifactKey: Guid(8aa38a699d0bdb247b9d7c3c43abb51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 6.asset using Guid(8aa38a699d0bdb247b9d7c3c43abb51e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ccf188d2b17d889aa9735b7836c8970') in 0.0010696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.420110 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 7.asset
+  artifactKey: Guid(2cce5f98b0056854992b513e922c7773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 7.asset using Guid(2cce5f98b0056854992b513e922c7773) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f36a4befd58ced27a4f0602b9f9e78b') in 0.0011225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.377022 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 8.asset
+  artifactKey: Guid(4f91c984a31764242aa8908e4d790a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 8.asset using Guid(4f91c984a31764242aa8908e4d790a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b50e9aed03a064d75e192c027d1a7a5') in 0.0011571 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.385001 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 9.asset
+  artifactKey: Guid(ff16416e95bcd2242990b8711843d602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 9.asset using Guid(ff16416e95bcd2242990b8711843d602) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5906a5c6d65e280bf507505c054190b7') in 0.0013138 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.348237 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 10.asset
+  artifactKey: Guid(76012f6e6cc94c94a839b487e17dd6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 10.asset using Guid(76012f6e6cc94c94a839b487e17dd6ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a66ce7e8e463814e5c86b3a61838f6a5') in 0.0010646 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.913427 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset
+  artifactKey: Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4B.asset using Guid(bd1762ee97a5c754d91dc18696f9b753) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0b9f4a1e9db9439d831564146f5e96fa') in 0.0188717 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset
+  artifactKey: Guid(328887b14563d3741829aedb8ae70a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 1.asset using Guid(328887b14563d3741829aedb8ae70a8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4521c0583159b7cf86c726d187df2e37') in 0.0194891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 5.asset
+  artifactKey: Guid(e8539b86653f03f42a7edce3517bf148) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 5.asset using Guid(e8539b86653f03f42a7edce3517bf148) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd49cf69f9ec4aaacaf40abe9a987318c') in 0.0169429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 4.asset
+  artifactKey: Guid(fe0974d6adf13f84d82b5a7d890f40cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 4.asset using Guid(fe0974d6adf13f84d82b5a7d890f40cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f99981c0393065f39f746bfc15f836a1') in 0.0178893 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset
+  artifactKey: Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N4A.asset using Guid(4c4213bb2bcfb9f4e9f6b08bb87aeff8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'edc3a2d46af7f9144c7c1d158637950f') in 0.0170936 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset
+  artifactKey: Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 6/BaniD3S6N 3.asset using Guid(c3a4be707a17f3349ab387a784bd4cc1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fac956201424fab43a47a9e5ec8da54e') in 0.0178066 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 9.asset
+  artifactKey: Guid(ff16416e95bcd2242990b8711843d602) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Pip/Day 3/Seq 1/PipD3S1N 9.asset using Guid(ff16416e95bcd2242990b8711843d602) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7e5d041f6b036ab38c6e89fadbb5d114') in 0.0157356 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

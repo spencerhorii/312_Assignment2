@@ -1,0 +1,772 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.16f1 (a56f230f6470) revision 10841891'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) CoreSingleLanguage' Language: 'en' Physical Memory: 32108 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-07-17T04:14:50.1942445Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-07-17T04:14:50Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker141
+-projectPath
+D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+-logFile
+Logs/AssetImportWorker141.log
+-srvPort
+49722
+-licensingIpc
+LicenseClient-User
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [38880]  Target information:
+
+Player connection [38880]  * "[IP] 192.168.1.97 [Port] 0 [Flags] 2 [Guid] 3759789084 [EditorId] 3759789084 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-OVH4FSK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [38880] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [38880] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 5.94 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.16f1 (a56f230f6470)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/ExitAnt-IAT312-P1/312_Assignment2/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Vendor:          NVIDIA
+    VRAM:            5996 MB
+    App VRAM Budget: 5228 MB
+    Driver:          32.0.15.8088
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-User"
+[Licensing::IpcConnector] LicenseClient-User channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.3.16" at "2026-07-17T04:14:51.6159369Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 29352, path: "C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              2185859c672144809ccbbfabad8f6662
+  Correlation Id:          47882071dff180c034864f0352291f7f
+  External correlation Id: 621001169568610927
+  Machine Id:              NKcRUsz1GwU4Q4WJtDcG2fyxkZM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User-6000.3.16" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.3.16-notifications" at "2026-07-17T04:14:51.6271763Z"
+[Licensing::Module] Licensing Background thread has ended after 1.43s
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002595 seconds.
+- Loaded All Assemblies, in  0.537 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.519 seconds
+Domain Reload Profiling: 1052ms
+	BeginReloadAssembly (189ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (206ms)
+		LoadAssemblies (181ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (202ms)
+			TypeCache.Refresh (201ms)
+				TypeCache.ScanAssembly (185ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (520ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (457ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (72ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (117ms)
+			ProcessInitializeOnLoadAttributes (179ms)
+			ProcessInitializeOnLoadMethodAttributes (84ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 3574399251830-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  0.943 seconds
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 1.97 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Assembly reference Packages/com.unity.cinemachine/Editor/Samples/ExposeHDRPInternals/HDRP-Editor-ref.asmref has no target assembly definition
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.62 ms, found 5 plugins.
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.119 seconds
+Domain Reload Profiling: 2057ms
+	BeginReloadAssembly (221ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (609ms)
+		LoadAssemblies (395ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (338ms)
+			TypeCache.Refresh (237ms)
+				TypeCache.ScanAssembly (221ms)
+			BuildScriptInfoCaches (83ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1119ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (933ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (243ms)
+			ProcessInitializeOnLoadAttributes (530ms)
+			ProcessInitializeOnLoadMethodAttributes (143ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
+Refreshing native plugins compatible for Editor in 2.45 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7649 unused Assets / (4.9 MB). Loaded Objects now: 8481.
+Memory consumption went from 163.7 MB to 158.8 MB.
+Total: 10.798600 ms (FindLiveObjects: 0.848200 ms CreateObjectMapping: 0.827700 ms MarkObjects: 6.484900 ms  DeleteObjects: 2.636900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 128695.334225 seconds.
+  path: Assets/Dialogue/Bani/Day 3/Seq 5/BaniD3S5N1.asset
+  artifactKey: Guid(7686cb1700aafa34cb79af8b7b3cbe21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Bani/Day 3/Seq 5/BaniD3S5N1.asset using Guid(7686cb1700aafa34cb79af8b7b3cbe21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86ed24ba8e382c5cbabc2faa5b10c62b') in 0.0261457 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.099527 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 9.asset
+  artifactKey: Guid(ac7f0eefdb482234eb19390eb55b5ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 9.asset using Guid(ac7f0eefdb482234eb19390eb55b5ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1839ccf1dd5b5a2665ca2ec43b6ea33') in 0.0062075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.907141 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 29.asset
+  artifactKey: Guid(3cc5eddbba049d74399734c8701864b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 29.asset using Guid(3cc5eddbba049d74399734c8701864b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '982589606f9f7d5f803faeba29604430') in 0.1472612 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 36.asset
+  artifactKey: Guid(946f1b2cfb062744387c8705d6af5267) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 36.asset using Guid(946f1b2cfb062744387c8705d6af5267) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5dd820f19cbf08e165f1ecda7cd8e4ec') in 0.0181191 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 34.asset
+  artifactKey: Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 34.asset using Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0bf353db0994e395eb9dbd0eae623973') in 0.0203224 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 35.asset
+  artifactKey: Guid(8826a0f6856b37346ab6f4d309adee41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 35.asset using Guid(8826a0f6856b37346ab6f4d309adee41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '48c15bab9de13f010e53f69361994833') in 0.018058 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 12.asset
+  artifactKey: Guid(c14ee4f92a798944f8e04e2707419e84) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 12.asset using Guid(c14ee4f92a798944f8e04e2707419e84) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a00c9dd5f3a4ca29d0bc1eeedd8d8da7') in 0.0199525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 19.asset
+  artifactKey: Guid(88318fb76873af64e9710df34f48a4b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 19.asset using Guid(88318fb76873af64e9710df34f48a4b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '689c0c6d8e7a72c27073fafe85de6928') in 0.0167695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 15.asset
+  artifactKey: Guid(1f611479844ffe942be3f7b1aa59aa33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 15.asset using Guid(1f611479844ffe942be3f7b1aa59aa33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74bc3aa2b4a2c581bc497e13072d7c75') in 0.0187888 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 46.asset
+  artifactKey: Guid(9db1336f8aee75f498e021f08563e7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 46.asset using Guid(9db1336f8aee75f498e021f08563e7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b686c952733015e86ed77e376b02f674') in 0.0031353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 51.asset
+  artifactKey: Guid(d2afb1ffb9dcb614bbb273d125347369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 51.asset using Guid(d2afb1ffb9dcb614bbb273d125347369) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c75043c3632547f433264d8b3aac70c5') in 0.0020142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 24.asset
+  artifactKey: Guid(4bb2394136e8ec64f928e2821581a5f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 24.asset using Guid(4bb2394136e8ec64f928e2821581a5f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc8c14c6bae9f30f513712bb4f367bfa') in 0.0166562 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 26.asset
+  artifactKey: Guid(2558ba24b7db51c4fb0c3c43cd5bbbd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 26.asset using Guid(2558ba24b7db51c4fb0c3c43cd5bbbd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b7f62c90d0498c593c55fc797203449') in 0.0039108 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 17.asset
+  artifactKey: Guid(2b1f5c2d79de26c4da918cb69411b502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 17.asset using Guid(2b1f5c2d79de26c4da918cb69411b502) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd2d97088a59510967f8429a66c9aa0b6') in 0.0020012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 53.asset
+  artifactKey: Guid(ef84b8681a40cba40ac77deeda74eefa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 53.asset using Guid(ef84b8681a40cba40ac77deeda74eefa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8ee16282653fb13cc9440735d77a58df') in 0.0172592 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 17.asset
+  artifactKey: Guid(2b1f5c2d79de26c4da918cb69411b502) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 17.asset using Guid(2b1f5c2d79de26c4da918cb69411b502) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cdc8cfc3b186c33380ef3c22312c3ca8') in 0.0176439 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 11.asset
+  artifactKey: Guid(c66010f2c7720f6419703f7cf31751b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 11.asset using Guid(c66010f2c7720f6419703f7cf31751b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ece0ce6f47f391806e13dacad6794195') in 0.0173787 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 37.asset
+  artifactKey: Guid(dc778031169aa0c44b996cffef1c8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 37.asset using Guid(dc778031169aa0c44b996cffef1c8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ef6dbcb47607bd6027d43ec4d877bfa2') in 0.0183589 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 9.asset
+  artifactKey: Guid(ac7f0eefdb482234eb19390eb55b5ad9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 9.asset using Guid(ac7f0eefdb482234eb19390eb55b5ad9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '68b93619e0af5f0a171a35b07daaf54c') in 0.0210957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 15.asset
+  artifactKey: Guid(1f611479844ffe942be3f7b1aa59aa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 15.asset using Guid(1f611479844ffe942be3f7b1aa59aa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b2e243a1bfbc64af0ed5f0897f8cdc17') in 0.0024786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 25.asset
+  artifactKey: Guid(b83b23c45bdbe394f98d821589baefcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 25.asset using Guid(b83b23c45bdbe394f98d821589baefcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c98d8861605614c5767cfa4e985154f4') in 0.0212279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 10.asset
+  artifactKey: Guid(492a457997b0c6647aff298d9d42280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 10.asset using Guid(492a457997b0c6647aff298d9d42280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '751851ad77458ef80b0839716706a943') in 0.0040371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 29.asset
+  artifactKey: Guid(3cc5eddbba049d74399734c8701864b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 29.asset using Guid(3cc5eddbba049d74399734c8701864b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '36abc7d31108067f32f1796bf0ed5c44') in 0.0036513 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 44.asset
+  artifactKey: Guid(51af4bdbda6579c4a90d756368b5f478) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 44.asset using Guid(51af4bdbda6579c4a90d756368b5f478) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c1403f1db597cb940fbe9b0e2fd710ea') in 0.0183152 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 51.asset
+  artifactKey: Guid(d2afb1ffb9dcb614bbb273d125347369) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 51.asset using Guid(d2afb1ffb9dcb614bbb273d125347369) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2215c3c7fe1dd221636cdf75548c4d1d') in 0.0218283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 22.asset
+  artifactKey: Guid(b98db7b627b6e4a4d93033e33015c6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 22.asset using Guid(b98db7b627b6e4a4d93033e33015c6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '36c49f1be29deb9feded3ca85ea41b87') in 0.0045534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 27.asset
+  artifactKey: Guid(17993a330cc40ca429853151fead3762) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 27.asset using Guid(17993a330cc40ca429853151fead3762) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7bcda5097e947e5fa61bab8de5707738') in 0.0047725 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 38.asset
+  artifactKey: Guid(f92d820376033d8408a6b9e118907588) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 38.asset using Guid(f92d820376033d8408a6b9e118907588) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '056b453b38c2144858ea7a511bf2c580') in 0.0176838 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 39.asset
+  artifactKey: Guid(7d9a50f94d0cf484794e3352a762912a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 39.asset using Guid(7d9a50f94d0cf484794e3352a762912a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '04b5a9eee3b4db74c2ccda5afaa9ca69') in 0.0227357 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 50.asset
+  artifactKey: Guid(e85558c0ffeccd04f8ad47db6c25c8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 50.asset using Guid(e85558c0ffeccd04f8ad47db6c25c8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c39033ad01d7300bfc9f2b434c4b8db0') in 0.0194797 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 30.asset
+  artifactKey: Guid(ee404335fd2f75b40981b4903432f229) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 30.asset using Guid(ee404335fd2f75b40981b4903432f229) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cb918a417a3826dd379de2413ff834c2') in 0.0161079 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 33.asset
+  artifactKey: Guid(17678a6c749773b4daa3fecec72d7aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 33.asset using Guid(17678a6c749773b4daa3fecec72d7aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e39cf3c2c787af80b5d42e4622e25334') in 0.0032777 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 40.asset
+  artifactKey: Guid(13f834f5157be9a4386ce6de9917430a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 40.asset using Guid(13f834f5157be9a4386ce6de9917430a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f27ebda5705524318666c21dd30e710a') in 0.0191578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 25.asset
+  artifactKey: Guid(b83b23c45bdbe394f98d821589baefcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 25.asset using Guid(b83b23c45bdbe394f98d821589baefcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c3ca323b09c07a4f2fd989bc7775b293') in 0.0039916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 32.asset
+  artifactKey: Guid(738a34200acdad74fb9a033b4894d1b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 32.asset using Guid(738a34200acdad74fb9a033b4894d1b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25602f2ffaf94b75c271927df9a6aff9') in 0.0024879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 20.asset
+  artifactKey: Guid(fd00f4d6cb18d8943a18a786ac82585f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 20.asset using Guid(fd00f4d6cb18d8943a18a786ac82585f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b9b2053e273175e802aba9db16a264b4') in 0.01456 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 52.asset
+  artifactKey: Guid(7d3a76f79e0fc8a4fbc30d7e1d00bcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 52.asset using Guid(7d3a76f79e0fc8a4fbc30d7e1d00bcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2c9db7d1ffa4f5e43a97cc2c83f359a') in 0.0016193 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 40.asset
+  artifactKey: Guid(13f834f5157be9a4386ce6de9917430a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 40.asset using Guid(13f834f5157be9a4386ce6de9917430a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ecb80c085c19c44f15755950b3e0b9b') in 0.0040178 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 16
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 13.asset
+  artifactKey: Guid(34c7d67119fc3cd4d96e422a5178817e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 13.asset using Guid(34c7d67119fc3cd4d96e422a5178817e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '662d9273bba6bf2aeb928b5fe9a40555') in 0.0029647 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 27.asset
+  artifactKey: Guid(17993a330cc40ca429853151fead3762) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 27.asset using Guid(17993a330cc40ca429853151fead3762) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b96a8481ed6ffe5cf49d213f3b58b16') in 0.0174658 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 23.asset
+  artifactKey: Guid(1fd3b3ac2c2445845a49a65002a51483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 23.asset using Guid(1fd3b3ac2c2445845a49a65002a51483) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a75f7e51f143c6de1e6f19188af4f5c') in 0.0044327 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 23.asset
+  artifactKey: Guid(1fd3b3ac2c2445845a49a65002a51483) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 23.asset using Guid(1fd3b3ac2c2445845a49a65002a51483) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57912ee74c1636d35421db50d77c2c3e') in 0.0182754 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 47.asset
+  artifactKey: Guid(81464185d6ed25845bbc9e968a9c6a63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 47.asset using Guid(81464185d6ed25845bbc9e968a9c6a63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1345aa59a6ad6678645b09702dbdcc61') in 0.003168 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 48.asset
+  artifactKey: Guid(52aedffa9e504e943943fa8acebb2c05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 48.asset using Guid(52aedffa9e504e943943fa8acebb2c05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9d9f8969d70943b942486ab1688c2369') in 0.0198751 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 28.asset
+  artifactKey: Guid(a44dab21791be144faf787dc2f4f16e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 28.asset using Guid(a44dab21791be144faf787dc2f4f16e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '377729f2080af578c99ce0b64d16423d') in 0.004021 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 38.asset
+  artifactKey: Guid(f92d820376033d8408a6b9e118907588) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 38.asset using Guid(f92d820376033d8408a6b9e118907588) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef5854d4a309e2216d398e0f744b8ec7') in 0.0014344 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 34.asset
+  artifactKey: Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 34.asset using Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ff0cb0181b8e4d19b6e6802963c2bc4') in 0.0021861 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 14.asset
+  artifactKey: Guid(0d03e204248f65641a20f9bb1f7ad2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Herald/Day5/Seq 2/HeraldD5S1N 14.asset using Guid(0d03e204248f65641a20f9bb1f7ad2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1615f45cf4f3b1906eb56b0a26b441e4') in 0.0026151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 198.791246 seconds.
+  path: Assets/Dialogue/Kev/Day5/Seq 1/KevD5S1N 1.asset
+  artifactKey: Guid(fd83d350ad0bf694ea09e06e11598bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialogue/Kev/Day5/Seq 1/KevD5S1N 1.asset using Guid(fd83d350ad0bf694ea09e06e11598bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b1a08a1211fef7a14dcd98562e23285') in 0.0013198 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.578673 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 32.asset
+  artifactKey: Guid(738a34200acdad74fb9a033b4894d1b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 32.asset using Guid(738a34200acdad74fb9a033b4894d1b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6dfe0d3f229c66db0140a9b733d2bd4f') in 0.0179056 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 34.asset
+  artifactKey: Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 34.asset using Guid(b80086a76918ade45a7bc837cdd3c02d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1f8280874d55a419de4ecbc22ad8facf') in 0.0194846 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 28.asset
+  artifactKey: Guid(a44dab21791be144faf787dc2f4f16e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 28.asset using Guid(a44dab21791be144faf787dc2f4f16e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '01b6d426e2e5bccfc31643f86832cd96') in 0.0207891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 49.asset
+  artifactKey: Guid(f3b2fd6ac54bf75488f719354b96e74d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 49.asset using Guid(f3b2fd6ac54bf75488f719354b96e74d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3041777818cf31245f276a51606aa912') in 0.0186652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 53.asset
+  artifactKey: Guid(ef84b8681a40cba40ac77deeda74eefa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 53.asset using Guid(ef84b8681a40cba40ac77deeda74eefa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aa9e0225b6b988b465c5e7a5d6c96bdc') in 0.0165441 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 37.asset
+  artifactKey: Guid(dc778031169aa0c44b996cffef1c8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 37.asset using Guid(dc778031169aa0c44b996cffef1c8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '693696b38a35c0f8ff3a97954bee6706') in 0.0194541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 29.asset
+  artifactKey: Guid(3cc5eddbba049d74399734c8701864b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 29.asset using Guid(3cc5eddbba049d74399734c8701864b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '610d2bff4166afa2824009f63feed6dc') in 0.0185595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 25.asset
+  artifactKey: Guid(b83b23c45bdbe394f98d821589baefcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 25.asset using Guid(b83b23c45bdbe394f98d821589baefcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '19c8d33d94f93a9b56da472a9278ebf8') in 0.0238473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 44.asset
+  artifactKey: Guid(51af4bdbda6579c4a90d756368b5f478) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 44.asset using Guid(51af4bdbda6579c4a90d756368b5f478) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '21b1c32eb494b9ffdb3ab7b531684ad6') in 0.020817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 47.asset
+  artifactKey: Guid(81464185d6ed25845bbc9e968a9c6a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 47.asset using Guid(81464185d6ed25845bbc9e968a9c6a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fbda60ee260e429d5b61d3fe06d2e885') in 0.0195656 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 39.asset
+  artifactKey: Guid(7d9a50f94d0cf484794e3352a762912a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 39.asset using Guid(7d9a50f94d0cf484794e3352a762912a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4750d02d4639f831bf29bfea99deab21') in 0.0181766 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 45.asset
+  artifactKey: Guid(bb24a44866817f047ab86f0d4a0acf49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 45.asset using Guid(bb24a44866817f047ab86f0d4a0acf49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '96954ce3869fa1c301b08be7a85bc6c0') in 0.0183543 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 26.asset
+  artifactKey: Guid(2558ba24b7db51c4fb0c3c43cd5bbbd4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 26.asset using Guid(2558ba24b7db51c4fb0c3c43cd5bbbd4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9eb8f9bd9956e7a222afbe13c1fc8177') in 0.0232469 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 43.asset
+  artifactKey: Guid(e28fff0b2665c95439273ae4a4e05b72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 43.asset using Guid(e28fff0b2665c95439273ae4a4e05b72) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e4ed47f6b877f2dd430c9786fe122ace') in 0.0229046 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 13
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 48.asset
+  artifactKey: Guid(52aedffa9e504e943943fa8acebb2c05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 48.asset using Guid(52aedffa9e504e943943fa8acebb2c05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '782af9ebd758718f8c4725acf6641276') in 0.0185365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 55.asset
+  artifactKey: Guid(593ad478b2ac0fd40865dd9eeedb3240) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 55.asset using Guid(593ad478b2ac0fd40865dd9eeedb3240) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0a6b0897c890e47b0f3e3db5e365bf79') in 0.0175032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 54.asset
+  artifactKey: Guid(8db5531dc84ab93439530c7f8ca19634) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Dialogue/Herald/Day5/Seq 3/HeraldD5S1N 54.asset using Guid(8db5531dc84ab93439530c7f8ca19634) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd1b73982811c349c14b3fec3bc9fb0ed') in 0.0154744 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

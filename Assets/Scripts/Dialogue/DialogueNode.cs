@@ -175,6 +175,15 @@ public class DialogueNode : ScriptableObject
     [Tooltip("The shared GameData asset - drag in the SAME asset used everywhere else in the project.")]
     public GameData gameData;
 
+    [Header("Bani Favour (optional, any node type)")]
+    [Tooltip("If checked, gameData.AddBaniFavour(baniFavourAmount) is called once this node's text " +
+            "finishes typing. Uses the same shared GameData asset dragged in above (Day Advancement's " +
+            "gameData field) - no separate reference needed.")]
+    public bool incrementsBaniFavour;
+    [Tooltip("Amount to add to Bani Favour when this node fires. Can be negative to decrease it.")]
+    public int baniFavourAmount = 1;
+
+
     [Header("Task Completion (optional, any node type)")]
     [Tooltip("If checked, taskManager.CompleteTask(taskIdToComplete) is called once this node's " +
              "text finishes typing.")]

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 132631894151729036}
   - component: {fileID: 4850670714532732489}
   - component: {fileID: 4033738515078903321}
+  - component: {fileID: 8798562520847258511}
   m_Layer: 0
   m_Name: NPC_Bani
   m_TagString: Untagged
@@ -164,8 +165,64 @@ MonoBehaviour:
       startNode: {fileID: 11400000, guid: fc51107c845bd474c8dd882cd17b76c7, type: 2}
     - sequence: 5
       startNode: {fileID: 11400000, guid: 227001e720702a247a51f83de5a68674, type: 2}
+  - day: 2
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 869ffc03ef47cf8478998b051ed9eead, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: 3c132e7fc7cabe446a8cd530c394b3a4, type: 2}
+    - sequence: 3
+      startNode: {fileID: 11400000, guid: ede93c8aa2262c7458863bae29419aee, type: 2}
+    - sequence: 4
+      startNode: {fileID: 11400000, guid: 9b732e04e9c0ca445ab96b97dc505787, type: 2}
+    - sequence: 5
+      startNode: {fileID: 11400000, guid: 737a6357165865943bfd8d0515b7a172, type: 2}
+  - day: 3
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 5fa26fb0ac35fe14da431147909f7eb6, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: e7a88639bffa67d4eb1af3790ac572ba, type: 2}
+    - sequence: 3
+      startNode: {fileID: 11400000, guid: 1f08f2bd57834de47805d029c7deef31, type: 2}
+    - sequence: 4
+      startNode: {fileID: 11400000, guid: f1ec03510957efa45b8a61a8c62f67d8, type: 2}
+    - sequence: 5
+      startNode: {fileID: 11400000, guid: 7686cb1700aafa34cb79af8b7b3cbe21, type: 2}
+    - sequence: 6
+      startNode: {fileID: 11400000, guid: 328887b14563d3741829aedb8ae70a8b, type: 2}
+  - day: 4
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: e9ee36efdd67e1f4a887fb8dbb09cc77, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: fa11af54884d5194d9d2deae74c8f74b, type: 2}
+    - sequence: 3
+      startNode: {fileID: 11400000, guid: 370e3724cd01b274fb17fbaaada14752, type: 2}
+    - sequence: 3
+      startNode: {fileID: 11400000, guid: 00423398fafea5c4fa50435c4dce6638, type: 2}
+  - day: 5
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 0bc1dbcab3faf4b4bb55612fadedcb80, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: 2ceef80364b3ef44c8569dc89a96d9f2, type: 2}
   isMerchant: 0
   purchasableItems: []
+--- !u!114 &8798562520847258511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050254775732936776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcefd723fbf44818a8353c5d238ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::boilSprite
+  frame1: {fileID: -3825342582096789990, guid: 0b4358f67ad6096448431f3c171e5adc, type: 3}
+  frame2: {fileID: -3301290897430296830, guid: 0beaf7deddca5c846bac700b4a179e51, type: 3}
 --- !u!1 &2593403682223714961
 GameObject:
   m_ObjectHideFlags: 0

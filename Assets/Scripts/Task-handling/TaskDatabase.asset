@@ -19,21 +19,40 @@ MonoBehaviour:
         bodega.
       moneyReward: 50
       npc: 0
-    followUpTasks:
-    - description: 'TEST '
-      moneyReward: 0
-      npc: 0
-    - description: ALORS LETS GARCONS
-      moneyReward: 0
-      npc: 0
+    followUpTasks: []
   - day: 2
     initialTask:
-      description: <style=H1>This is the Task Name</style> This is the description
-        of the task. I better get this shit done chat.
-      moneyReward: 10
-      npc: 1
+      description: <style=H1>Pizza Delivery</style> \nSeek out Artur at the bodega
+      moneyReward: 50
+      npc: 5
     followUpTasks:
-    - description: <style=H1>This is the Task Name</style> This is the description
-        of the task. I better get this shit done chat.
+    - description: <style=H1>Misplaced Manga</style> \nInvestigate the public park
+      moneyReward: 25
+      npc: 3
+  - day: 3
+    initialTask:
+      description: <style=H1>Newspaper Delivery</style> \nPip wants a newspaper delivered.
+      moneyReward: 50
+      npc: 5
+    followUpTasks:
+    - description: <style=H1>Overdue Tools</style> \nHelp Coco return borrowed tools
+        from Pendi
+      moneyReward: 25
+      npc: 10
+  - day: 4
+    initialTask:
+      description: <style=H1>A Glypse of The Past</style> \nRetrieve a prescription
+        for Coco from the hospital
+      moneyReward: 75
+      npc: 10
+    followUpTasks:
+    - description: '<style=H1>Coffee delivery</style> \nPip knows what you did. '
+      moneyReward: 25
+      npc: 10
+  - day: 5
+    initialTask:
+      description: <style=H1>Nowhere to Run</style> \Use snowtires and seek refuge
+        in the snowy mountains
       moneyReward: 0
-      npc: 0
+      npc: 7
+    followUpTasks: []

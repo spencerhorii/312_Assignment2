@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 132631894151729036}
   - component: {fileID: 4850670714532732489}
   - component: {fileID: 4033738515078903321}
+  - component: {fileID: 4753360683531019796}
   m_Layer: 0
   m_Name: NPC_Artur
   m_TagString: Untagged
@@ -160,8 +161,42 @@ MonoBehaviour:
       startNode: {fileID: 11400000, guid: a7b5881d6bb4dae48a1f2033c23d5499, type: 2}
     - sequence: 3
       startNode: {fileID: 11400000, guid: fdbe16d3319809a44bba597441da70f8, type: 2}
+  - day: 2
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 6dceb96c36ed0984c9828577fc5da87c, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: a82a6292422777c4686b434b2e33d40f, type: 2}
+  - day: 3
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 6a9acaf87e43e8b4c827295f5d374b07, type: 2}
+    - sequence: 2
+      startNode: {fileID: 11400000, guid: fbeb449acf0a1fb46bcf5dc2987db178, type: 2}
+  - day: 4
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 4268f3b86e344db478f7c14200fbb973, type: 2}
+  - day: 5
+    sequenceStarters:
+    - sequence: 1
+      startNode: {fileID: 11400000, guid: 47b3b8abd5e092048a146884f4f5404d, type: 2}
   isMerchant: 0
   purchasableItems: []
+--- !u!114 &4753360683531019796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050254775732936776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dcefd723fbf44818a8353c5d238ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::boilSprite
+  frame1: {fileID: 5039077736192342108, guid: 1faef24ecf0bda14f911cd5cb8f7f092, type: 3}
+  frame2: {fileID: -6042069714235531540, guid: ff1e8a30bbf2ee043b133bcae8402f6e, type: 3}
 --- !u!1 &2593403682223714961
 GameObject:
   m_ObjectHideFlags: 0

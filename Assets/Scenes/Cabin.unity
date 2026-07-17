@@ -4550,6 +4550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9926cbd4d14534a89182cf05aae812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  gameData: {fileID: 11400000, guid: 640419fa031054c66bd0f296902a992f, type: 2}
   insufficientFundsMessageDuration: 1
 --- !u!1 &1152131384
 GameObject:
@@ -7064,6 +7065,70 @@ RectTransform:
   m_AnchoredPosition: {x: 320, y: -199}
   m_SizeDelta: {x: 109.20001, y: 70.925}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1858802877
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 132631894151729036, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050254775732936776, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_Name
+      value: NPC_Herald
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.859
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281476954920347212, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2593403682223714961, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 2f14cc9233199dd429d6d7970434cc82, type: 3}
 --- !u!1 &1899845211
 GameObject:
   m_ObjectHideFlags: 0
@@ -7744,6 +7809,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   charactersPerSecond: 40
+  playerVoiceData: {fileID: 0}
+  continueSound: {fileID: 0}
+  switchOptionSound: {fileID: 0}
+  confirmOptionSound: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7754,3 +7823,4 @@ SceneRoots:
   - {fileID: 1273851895}
   - {fileID: 314881815}
   - {fileID: 323175990}
+  - {fileID: 1858802877}
