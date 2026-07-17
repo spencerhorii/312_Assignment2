@@ -27,6 +27,11 @@ public class DrivingChanger : MonoBehaviour
         prevDay = 0;
         ps = rain.GetComponent<ParticleSystem>();
         rain.SetActive(false);
+        fence.SetActive(true);
+        rockBlock1.SetActive(true);
+        rockBlock2.SetActive(true);
+        snowBlock1.SetActive(true);
+        snowBlock2.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,11 +45,6 @@ public class DrivingChanger : MonoBehaviour
                 rain.SetActive(false);
                 setObjectState(false, policeWave1);
                 setObjectState(false, missingWave);
-                fence.SetActive(true);
-                rockBlock1.SetActive(true);
-                rockBlock2.SetActive(true);
-                snowBlock1.SetActive(true);
-                snowBlock2.SetActive(true);
             }
 
             else if(gd.getDay() == 2)

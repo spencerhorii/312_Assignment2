@@ -471,10 +471,6 @@
 
 
 
-
-
-
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -854,18 +850,45 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Applies a node's day-advancement and task-completion actions, if set. Both reference
-    /// the shared GameData/TaskManager assets carried directly on the node itself (dragged in
-    /// per-node, same pattern as everywhere else), so DialogueManager needs no wiring of its own.
+    /// Applies a node's task-completion, Bani Favour, and day-advancement actions, if set. All
+    /// reference shared assets carried directly on the node itself (dragged in per-node, same
+    /// pattern as everywhere else), so DialogueManager needs no wiring of its own.
+    ///
+    /// ORDER MATTERS: completesTask runs FIRST, since completing the day's primary task is what
+    /// unlocks GameData.canAdvance. If triggersDayAdvance ran before completesTask on the same
+    /// node, AdvanceDay() would still see canAdvance == true (locked) and refuse to advance -
+    /// this exact bug happened once already when the order got flipped, so don't reorder this
+    /// without re-checking that interaction.
+    ///
     /// If a task is completed and it matches the day's primary task ID, and the node also has
     /// advanceSequenceByPrimaryTask checked, the current NPC's sequence jumps directly to
     /// advanceSequenceTarget.
     /// </summary>
     private void ApplyProgressionActions(DialogueNode node)
     {
-        if (node.triggersDayAdvance && node.gameData != null)
+        if (node.completesTask && node.taskManager != null && !string.IsNullOrEmpty(node.taskIdToComplete))
         {
-            node.gameData.AdvanceDay();
+            node.taskManager.CompleteTask(node.taskIdToComplete);
+
+            bool wasPrimaryTaskForCurrentDay = node.gameData != null &&
+                node.taskIdToComplete == $"day{node.gameData.CurrentDay}_initial";
+
+            if (wasPrimaryTaskForCurrentDay && node.advanceSequenceByPrimaryTask)
+            {
+                if (!string.IsNullOrEmpty(node.targetNpcID) && node.gameData != null)
+                {
+                    Debug.Log($"[DialogueManager] Setting sequence for npcID '{node.targetNpcID}' to {node.advanceSequenceTarget}.");
+                    // Update the specified NPC directly via GameData - works even if that NPC
+                    // isn't currently loaded/present in the scene.
+                    node.gameData.SetNPCSequence(node.targetNpcID, node.advanceSequenceTarget);
+                }
+                else if (currentNPC != null)
+                {
+                    Debug.Log($"[DialogueManager] No targetNpcID set - falling back to current NPC '{currentNPC.npcID}', setting sequence to {node.advanceSequenceTarget}.");
+                    // Fallback: no targetNpcID specified, so default to whoever is currently being spoken to.
+                    currentNPC.SetSequence(node.advanceSequenceTarget);
+                }
+            }
         }
 
         if (node.incrementsBaniFavour && node.gameData != null)
@@ -873,18 +896,9 @@ public class DialogueManager : MonoBehaviour
             node.gameData.AddBaniFavour(node.baniFavourAmount);
         }
 
-        if (node.completesTask && node.taskManager != null && !string.IsNullOrEmpty(node.taskIdToComplete))
+        if (node.triggersDayAdvance && node.gameData != null)
         {
-            node.taskManager.CompleteTask(node.taskIdToComplete);
-
-            if (node.advanceSequenceByPrimaryTask && node.gameData != null && currentNPC != null)
-            {
-                string primaryTaskId = $"day{node.gameData.CurrentDay}_initial";
-                if (node.taskIdToComplete == primaryTaskId)
-                {
-                    currentNPC.SetSequence(node.advanceSequenceTarget);
-                }
-            }
+            node.gameData.AdvanceDay();
         }
     }
 
